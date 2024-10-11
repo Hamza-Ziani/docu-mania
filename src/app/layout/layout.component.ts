@@ -86,9 +86,9 @@ export class LayoutComponent implements OnInit, OnDestroy
         this._navigationService.getPosition().subscribe({
             next: (pos: string) => {
               this.position = pos;
-              console.log('New position:', pos);
             }
         })
+
 combineLatest([
     this._fuseConfigService.config$,
     this._fuseMediaWatcherService.onMediaQueryChange$(['(prefers-color-scheme: dark)', '(prefers-color-scheme: light)']),

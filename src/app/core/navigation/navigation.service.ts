@@ -13,10 +13,10 @@ export class NavigationService
     getPosition(): Observable<string> {
         return this._position.asObservable();
     }
-    
+
     updatePosition(newPosition: string): void {
         this._position.next(newPosition);  // Emit the new value
-      }
+    }
     // -----------------------------------------------------------------------------------------------------
     // @ Accessors
     // -----------------------------------------------------------------------------------------------------
