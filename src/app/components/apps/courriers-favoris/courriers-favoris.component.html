@@ -1,0 +1,267 @@
+<div class="absolute inset-0 flex flex-col min-w-0 overflow-hidden" *transloco="let translate">
+    <mat-drawer-container class="flex-auto h-full bg-card dark:bg-transparent" (backdropClick)="onBackdropClicked()">
+        <mat-drawer #matDrawer class="w-full sm:w-100 dark:bg-gray-900" [mode]="drawerMode" [opened]="false"
+            [position]="'end'" [disableClose]="true">
+            <div class="p-4">
+                <!-- Close Button -->
+                <button mat-icon-button color="warn" (click)="closeDrawer()">
+                    <mat-icon>close</mat-icon>
+                </button>
+                <!-- Display your data here -->
+                <div>
+                    <div class="flex flex-col flex-auto p-2 md:p-8">
+                        <!-- Preview -->
+                        <div class="mt-1">
+                            <div
+                                class="flex items-center justify-center h-30 w-80 border rounded-lg bg-gray-50 dark:bg-card">
+                                <ng-container>
+                                    <mat-icon class="icon-size-20 icon-color" [svgIcon]="'heroicons_outline:folder'">
+                                    </mat-icon>
+                                </ng-container>
+
+                            </div>
+                        </div>
+                        <!-- Information -->
+                        <div class="text-lg font-medium mt-8">Information</div>
+                        <div class="flex flex-col mt-4 border-t border-b divide-y font-medium">
+                            <div class="flex items-center justify-between py-3">
+                                <div class="text-secondary">Created By</div>
+                                <div>createdBy</div>
+                            </div>
+                            <div class="flex items-center justify-between py-3">
+                                <div class="text-secondary">Created At</div>
+                                <div>createdAt</div>
+                            </div>
+                            <div class="flex items-center justify-between py-3">
+                                <div class="text-secondary">Modified At</div>
+                                <div>modifiedAt</div>
+                            </div>
+                            <div class="flex items-center justify-between py-3">
+                                <div class="text-secondary">Size</div>
+                                <div>.size</div>
+                            </div>
+                            <ng-container>
+                                <div class="flex items-center justify-between py-3">
+                                    <div class="text-secondary">Contents</div>
+                                    <div>contents</div>
+                                </div>
+                            </ng-container>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="flex items-center justify-between py-3">
+                            <div class="text-secondary">Description</div>
+                            <button mat-icon-button>
+                                <mat-icon class="icon-size-5" [svgIcon]="'heroicons_solid:x'"></mat-icon>
+                                <!-- Close icon -->
+                            </button>
+                        </div>
+
+                        <!-- Display the Description -->
+                        <textarea rows="2" cols="40" class="w-full border p-2 rounded" readonly></textarea>
+
+                        <!-- Actions -->
+                        <div class="grid grid-cols-2 gap-4 w-full mt-8">
+                            <!-- Anuler Button with Icon -->
+
+                            <button mat-flat-button type="button" (click)="closeDrawer()" color="warn"
+                                class="px-6 ml-3 mdc-button mdc-button--unelevated mat-mdc-unelevated-button mat-mdc-button-base"
+                                mat-ripple-loader-class-name="mat-mdc-button-ripple">
+                                <span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span>
+                                <span class="mdc-button__label">Close</span>
+                                <span class="mat-mdc-focus-indicator"></span>
+                                <span class="mat-mdc-button-touch-target"></span>
+                                <span class="mat-ripple mat-mdc-button-ripple"></span>
+                                <mat-icon svgIcon="heroicons_outline:x-mark" class="mr-2 text-white"></mat-icon>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </mat-drawer>
+        <mat-drawer-content class="flex flex-col bg-gray-100 dark:bg-transparent">
+            <!-- Main -->
+            <div class="flex flex-col flex-auto">
+                <!-- Header -->
+                <div class="container flex items-center justify-between mr-1 md:mr-2  px-2 pb-1 md:pb-2 pt-1 md:pt-2">
+                    <div class="flex items-center">
+                        <!-- Button with Dark Mode Color -->
+                        <ng-container>
+                            <button type="button" data-twe-ripple-init data-twe-ripple-color="light"
+                                class="flex items-center rounded bg-neutral-800 mr-2 px-2 py-1 text-[0.49rem] md:text-xs font-medium text-white shadow-md transition duration-150 ease-in-out hover:bg-neutral-600 focus:bg-neutral-600 focus:outline-none active:bg-neutral-700 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong">
+                                <i class="fa-solid fa-angle-left fa-2x mr-2"></i>
+                                {{translate('common.retour')}}
+                            </button>
+                        </ng-container>
+
+                        <!-- Gradient Vertical Separator -->
+                        <div class="mr-2 ml-2 h-6 sm:h-8 w-0.5 bg-gradient-to-t from-blue-500 to-blue-700"></div>
+
+                        <!-- Title -->
+                        <div class="title text-xs sm:text-sm md:text-lg lg:text-xl font-semibold leading-none">
+                            {{translate('favoris.courrierfavoris')}} :
+                        </div>
+
+                    </div>
+
+                    <!-- Right Section: Folders/Files Info or Breadcrumbs -->
+                    <div class="flex items-center">
+                        <ng-container>
+                            <h4>{{translate('common.total')}} : 4</h4>
+                        </ng-container>
+                    </div>
+
+                </div>
+                <!-- End Header -->
+
+                <!-- Line separator -->
+                <div class="w-full h-1 border-t-1" style="
+                        background: linear-gradient(to right, #ffc107, #007bff);
+                    ">
+                </div>
+                <!-- Courrier Favoris-->
+                <mat-tab-group class="sm:px-2" [animationDuration]="'0'">
+                    <mat-tab label="{{translate('favoris.courrierfavoris')}}">
+                        <ng-template matTabContent>
+                            <ng-container *ngIf="files.length > 0; else NoData">
+                                <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-6 gap-10">
+                                    <div *ngFor="let file of paginatedFiles; let i = index" class="flex-shrink-0">
+                                        <div class="bg-white rounded-lg shadow-md p-1 hover:scale-105">
+                                            <div class="flex items-center justify-between">
+                                                <div class="text-sm sm:text-lg font-medium truncate">{{
+                                                    file.name }}</div>
+                                                <button mat-icon-button [matMenuTriggerFor]="fileMenu"
+                                                    class="text-gray-600 hover:text-gray-800">
+                                                    <i class="fas fa-ellipsis-h"></i>
+                                                </button>
+                                                <mat-menu #fileMenu="matMenu">
+                                                    <button mat-menu-item (click)="openDialogUpdate()"
+                                                        class="flex items-center">
+                                                        <i class="fas fa-pen text-blue-500 mr-2"></i>
+                                                        <span>{{translate('common.modifier')}}</span>
+                                                    </button>
+                                                    <button mat-menu-item (click)="openConfirmationDialog()"
+                                                        class="flex items-center">
+                                                        <i class="fas fa-trash text-red-500 mr-2"></i>
+                                                        <span>{{translate('common.supprimer')}}</span>
+                                                    </button>
+                                                    <button mat-menu-item class="flex items-center">
+                                                        <i class="fas fa-star text-yellow-500 mr-2"></i>
+                                                        <span>{{translate('common.ajouterfavoris')}}</span>
+                                                    </button>
+                                                </mat-menu>
+                                            </div>
+                                            <!-- text-5xl sm:text-7xl font-bold tracking-tight leading-none -->
+                                            <div class="flex flex-col items-center mt-1">
+                                                <div
+                                                    class="relative text-5xl sm:text-7xl font-bold tracking-tight leading-none">
+                                                    <i class="fa-solid fa-envelope fa-2x gold-color"></i>
+                                                    <i
+                                                        class="fa-solid fa-star fa-1x white-color absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></i>
+                                                </div>
+                                                <div
+                                                    class="flex items-center justify-between w-full text-xs sm:text-sm text-gray-600">
+                                                    <div>{{translate('common.date')}}: {{ file.date }}</div>
+                                                    <button mat-icon-button (click)="openDetailsDrawer(slideIndex + i)"
+                                                        class="text-gray-600 hover:text-gray-800">
+                                                        <i class="fas fa-info-circle"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Pagination -->
+                                <div *ngIf="files.length > 12" class="flex justify-center items-center space-x-2 mt-4">
+                                    <button (click)="previousPage()" [disabled]="currentPage === 0"
+                                        class="flex items-center px-3 py-1 rounded bg-blue-500 hover:bg-blue-600 text-white disabled:bg-gray-300 disabled:text-gray-500">
+                                        <i class="fas fa-chevron-left mr-2"></i>
+                                        {{translate('common.precedent')}}
+                                    </button>
+                                    <ng-container *ngFor="let page of getPaginationArray(); let i = index">
+                                        <button *ngIf="i < 3 || i > totalPages - 4 || Math.abs(i - currentPage) <= 1"
+                                            (click)="goToPage(i)" [class.bg-blue-500]="i === currentPage"
+                                            [class.text-white]="i === currentPage" class="px-3 py-1 rounded"
+                                            [ngClass]="{'bg-blue-500 text-white': i === currentPage, 'bg-gray-200': i !== currentPage}">
+                                            {{ i + 1 }}
+                                        </button>
+                                        <span *ngIf="i === 3 && currentPage > 4">...</span>
+                                        <span *ngIf="i === totalPages - 4 && currentPage < totalPages - 5">...</span>
+                                    </ng-container>
+                                    <button (click)="nextPage()" [disabled]="currentPage === totalPages - 1"
+                                        class="flex items-center px-3 py-1 rounded bg-blue-500 hover:bg-blue-600 text-white disabled:bg-gray-300 disabled:text-gray-500">
+                                        {{translate('common.suivant')}}
+                                        <i class="fas fa-chevron-right ml-2"></i> <!-- Next Icon -->
+                                    </button>
+                                </div>
+
+                            </ng-container>
+
+                            <ng-template #NoData>
+                                <div class="text-center py-8 text-gray-600">{{translate('common.aucuncourrier')}}</div>
+                            </ng-template>
+                        </ng-template>
+                    </mat-tab>
+                </mat-tab-group>
+
+
+                <!-- Line separator -->
+                <div class="w-full h-1 border-t-1" style="
+                        background: linear-gradient(to right, #ffc107, #007bff);
+                    ">
+                </div>
+
+                <!-- End Courrier Favoris-->
+                <!-- No Data template -->
+                <ng-template #NoData>
+                    <div class="flex flex-auto flex-col items-center justify-center bg-gray-100 dark:bg-transparent">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="100px" height="100px" viewBox="0,0,256,256">
+                            <defs>
+                                <linearGradient x1="24" y1="6.708" x2="24" y2="14.977" gradientUnits="userSpaceOnUse"
+                                    id="color-1">
+                                    <stop offset="0" stop-color="#f5b92b"></stop>
+                                    <stop offset="1" stop-color="#c28200"></stop>
+                                </linearGradient>
+                                <linearGradient x1="24" y1="10.854" x2="24" y2="40.983" gradientUnits="userSpaceOnUse"
+                                    id="color-2">
+                                    <stop offset="0" stop-color="#ffd869"></stop>
+                                    <stop offset="1" stop-color="#f6bf29"></stop>
+                                </linearGradient>
+                                <linearGradient x1="20.398" y1="20.086" x2="28.857" y2="33.113"
+                                    gradientUnits="userSpaceOnUse" id="color-3">
+                                    <stop offset="0" stop-color="#f44f5a"></stop>
+                                    <stop offset="0.443" stop-color="#ee3d4a"></stop>
+                                    <stop offset="1" stop-color="#e52030"></stop>
+                                </linearGradient>
+                            </defs>
+                            <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                                stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                                font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                                style="mix-blend-mode: normal">
+                                <g transform="scale(5.33333,5.33333)">
+                                    <path
+                                        d="M24.414,10.414l-2.536,-2.536c-0.562,-0.562 -1.325,-0.878 -2.121,-0.878h-14.757c-1.105,0 -2,0.895 -2,2v30c0,1.105 0.895,2 2,2h38c1.105,0 2,-0.895 2,-2v-26c0,-1.105 -0.895,-2 -2,-2h-17.172c-0.53,0 -1.039,-0.211 -1.414,-0.586z"
+                                        fill="url(#color-1)"></path>
+                                    <path
+                                        d="M21.586,14.414l3.268,-3.268c0.093,-0.093 0.22,-0.146 0.353,-0.146h17.793c1.105,0 2,0.895 2,2v26c0,1.105 -0.895,2 -2,2h-38c-1.105,0 -2,-0.895 -2,-2v-23.5c0,-0.276 0.224,-0.5 0.5,-0.5h16.672c0.53,0 1.039,-0.211 1.414,-0.586z"
+                                        fill="url(#color-2)"></path>
+                                    <path
+                                        d="M24,23.25c0,0 2.015,-2.25 4.5,-2.25c2.485,0 4.5,2.042 4.5,4.5c0,4.23 -6.628,9.059 -8.508,10.344c-0.298,0.204 -0.685,0.204 -0.983,0c-1.881,-1.285 -8.509,-6.114 -8.509,-10.344c0,-2.458 2.015,-4.5 4.5,-4.5c2.485,0 4.5,2.25 4.5,2.25z"
+                                        fill="url(#color-3)"></path>
+                                </g>
+                            </g>
+                        </svg>
+                        <div class="mt-4 text-2xl font-semibold tracking-tight text-secondary">
+                            Aucun courrier favori!
+                        </div>
+                    </div>
+                </ng-template>
+                <!-- End No Data template -->
+            </div>
+        </mat-drawer-content>
+    </mat-drawer-container>
+</div>

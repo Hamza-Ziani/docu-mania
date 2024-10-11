@@ -1,0 +1,213 @@
+<!-- Loading bar -->
+<fuse-loading-bar></fuse-loading-bar>
+
+<!-- Navigation -->
+<fuse-vertical-navigation 
+    class="dark bg-gray-800 text-white print:hidden" 
+    [appearance]="navigationAppearance"
+    [mode]="isScreenSmall ? 'over' : 'side'" 
+    [name]="'mainNavigation'" 
+    [navigation]="navigation.default"
+    [opened]="!isScreenSmall"
+>
+    <!-- Navigation header hook -->
+    <ng-container fuseVerticalNavigationContentHeader>
+        <!-- Logo Acaps (shown on larger screens, hidden on smaller screens) -->
+        <div class="items-center justify-center h-30 p-6 lg:flex hidden">
+            <img class="logo-sidebar" src="assets/logo/acaps.png" alt="ACAPS Logo">
+        </div>
+    </ng-container>
+    
+    <ng-container fuseVerticalNavigationContentHeader>
+        <!-- Logo Documania (shown on smaller screens, hidden on larger screens) -->
+        <div class="logo items-center justify-center md:h-0 h-30 lg:hidden flex">
+            <img class="w-14" src="assets/logo/logo1.png" alt="Documania Logo">
+        </div>
+        
+    </ng-container>
+    
+</fuse-vertical-navigation>
+
+
+<!-- Wrapper -->
+<div class="flex flex-col flex-auto w-full min-w-0">
+
+    <!-- Header -->
+    <div
+        class="relative flex flex-0 items-center w-full h-16 px-4 md:px-6 z-49 shadow dark:shadow-none dark:border-b bg-card dark:bg-transparent print:hidden">
+        <div class="flex items-center pr-2 space-x-2">
+            <!-- Navigation toggle button -->
+            <button
+                mat-icon-button
+                *ngIf="isScreenSmall"
+                (click)="toggleNavigation('mainNavigation')">
+                <mat-icon [svgIcon]="'heroicons_outline:bars-3'"></mat-icon>
+            </button>
+            <!-- Navigation appearance toggle button -->
+            <button
+                class="hidden md:inline-flex "
+                mat-icon-button
+                (click)="toggleNavigationAppearance()">
+                <mat-icon [svgIcon]="'heroicons_outline:arrows-right-left'"></mat-icon>
+            </button>
+        </div>
+        <!-- Logo Wrapper -->
+        <div class="flex justify-center flex-1">
+            <img src="assets/logo/documania-no-bg1.png" class="logo-documania"alt="">
+        </div>
+        <!-- Components -->
+        <div class="flex items-center pl-2 ml-auto space-x-0.5 sm:space-x-2">
+            <languages></languages>
+            <!-- Share Button -->
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="25px" height="25px" viewBox="0,0,256,256">
+                <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                    stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                    font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                    style="mix-blend-mode: normal">
+                    <g transform="scale(5.33333,5.33333)">
+                        <g>
+                            <path
+                                d="M18.56,30.15c0.93067,-0.98419 1.6249,-2.16746 2.03,-3.46l8.84,5.16c-0.92435,0.98721 -1.61474,2.16974 -2.02,3.46v0z"
+                                fill="#ffe26f"></path>
+                            <path
+                                d="M20.5879,21.31c-0.40365,-1.29272 -1.09726,-2.47615 -2.0279,-3.46l8.85,-5.16c0.40533,1.29038 1.09597,2.47296 2.0207,3.46l-8.8407,5.16z"
+                                fill="#ffe26f"></path>
+                            <circle cx="36" cy="10" r="9" fill="#fcc419"></circle>
+                            <path
+                                d="M36,19c-3.11346,-0.01674 -6.00006,-1.63153 -7.6436,-4.2759c4.83304,-2.30445 10.44922,-2.29853 15.2774,0.0161c-1.64595,2.63484 -4.52715,4.24261 -7.6338,4.2598z"
+                                fill="#fcc419"></path>
+                            <circle cx="36" cy="7" r="3" fill="#fcc419"></circle>
+                            <circle cx="36" cy="38" r="9" fill="#fcc419"></circle>
+                            <path
+                                d="M36,47c-3.11346,-0.01674 -6.00006,-1.63153 -7.6436,-4.2759c4.83304,-2.30445 10.44922,-2.29853 15.2774,0.0161c-1.64595,2.63484 -4.52715,4.24261 -7.6338,4.2598z"
+                                fill="#fcc419"></path>
+                            <circle cx="36" cy="35" r="3" fill="#fcc419"></circle>
+                            <circle cx="12" cy="24" r="9" fill="#fcc419"></circle>
+                            <path
+                                d="M12,33c-3.11346,-0.01674 -6.00006,-1.63153 -7.6436,-4.2759c2.38048,-1.15743 4.99676,-1.74756 7.6436,-1.7241c2.64491,-0.0181 5.25798,0.57751 7.6338,1.74c-1.64581,2.63502 -4.52708,4.24289 -7.6338,4.26z"
+                                fill="#fcc419"></path>
+                            <circle cx="12" cy="21" r="3" fill="#fcc419"></circle>
+                            <path
+                                d="M36,28c-2.4848,0.00104 -4.87927,0.93184 -6.7124,2.6093l-7.5412,-4.4021c0.33814,-1.45204 0.33814,-2.96236 0,-4.4144l7.5412,-4.4021c3.66622,3.32813 9.21281,3.48205 13.05796,0.36236c3.84515,-3.11969 4.8376,-8.57894 2.33646,-12.85233c-2.50114,-4.2734 -7.74702,-6.08147 -12.35001,-4.25661c-4.60299,1.82485 -7.18494,6.73626 -6.0785,11.56258l-7.5448,4.3991c-3.99388,-3.63644 -10.15369,-3.44415 -13.91298,0.43432c-3.75929,3.87847 -3.75929,10.04129 0,13.91976c3.75929,3.87847 9.9191,4.07076 13.91298,0.43432l7.5448,4.3991c-0.93576,4.142 0.8475,8.42315 4.44698,10.67606c3.59947,2.2529 8.22948,1.9858 11.546,-0.66609c3.31652,-2.65189 4.59563,-7.10971 3.18976,-11.11662c-1.40587,-4.00691 -5.18985,-6.68829 -9.43624,-6.68665zM44,38c-0.00133,1.18591 -0.26837,2.35645 -0.7815,3.4256c-4.62464,-1.9008 -9.81236,-1.9008 -14.437,0c-1.40846,-2.96621 -0.86023,-6.49197 1.38239,-8.89047c2.24262,-2.3985 5.72365,-3.18206 8.77768,-1.97581c3.05403,1.20625 5.06009,4.15706 5.05844,7.44068zM36,18c-2.35568,-0.00049 -4.59086,-1.04144 -6.1072,-2.8442c3.92564,-1.54107 8.28876,-1.54107 12.2144,0c-1.51634,1.80276 -3.75152,2.84371 -6.1072,2.8442zM36,2c2.74472,-0.00647 5.3002,1.39787 6.76621,3.71829c1.466,2.32042 1.63683,5.23135 0.45229,7.70731c-4.62464,-1.9008 -9.81236,-1.9008 -14.437,0c-1.18453,-2.47597 -1.01371,-5.38689 0.45229,-7.70731c1.466,-2.32042 4.02149,-3.72476 6.76621,-3.71829zM27.923,15.8715l-6.8316,3.9878c-0.2798,-0.6109 -0.62052,-1.19201 -1.017,-1.7345l6.834,-3.9847c0.28044,0.60909 0.62029,1.18904 1.0146,1.7314zM12,16c2.74473,-0.00643 5.3002,1.39793 6.7662,3.71836c1.466,2.32043 1.63682,5.23136 0.4523,7.70734c-2.28506,-0.95828 -4.7407,-1.44328 -7.2185,-1.4257c-2.4778,-0.01758 -4.93344,0.46742 -7.2185,1.4257c-1.18452,-2.47598 -1.01369,-5.3869 0.4523,-7.70734c1.466,-2.32043 4.02147,-3.72479 6.7662,-3.71836zM5.8928,29.1558c1.94327,-0.77165 4.01634,-1.16398 6.1072,-1.1558c2.09086,-0.00818 4.16393,0.38415 6.1072,1.1558c-1.51603,1.80317 -3.75141,2.84422 -6.1072,2.84422c-2.35579,0 -4.59117,-1.04105 -6.1072,-2.84422zM20.0744,29.8752c0.3956,-0.54307 0.73627,-1.12409 1.017,-1.7345l6.8316,3.9878c-0.39552,0.54161 -0.73544,1.12171 -1.0146,1.7315zM36,46c-2.35568,-0.00049 -4.59086,-1.04144 -6.1072,-2.8442c3.92564,-1.54107 8.28876,-1.54107 12.2144,0c-1.51634,1.80276 -3.75152,2.84371 -6.1072,2.8442z"
+                                fill="#232328"></path>
+                            <path
+                                d="M36,39c2.20914,0 4,-1.79086 4,-4c0,-2.20914 -1.79086,-4 -4,-4c-2.20914,0 -4,1.79086 -4,4c0.00231,2.20818 1.79182,3.99769 4,4zM36,33c1.10457,0 2,0.89543 2,2c0,1.10457 -0.89543,2 -2,2c-1.10457,0 -2,-0.89543 -2,-2c0.00127,-1.10404 0.89596,-1.99873 2,-2z"
+                                fill="#232328"></path>
+                            <path
+                                d="M12,25c2.20914,0 4,-1.79086 4,-4c0,-2.20914 -1.79086,-4 -4,-4c-2.20914,0 -4,1.79086 -4,4c0.00248,2.20811 1.79189,3.99752 4,4zM12,19c1.10457,0 2,0.89543 2,2c0,1.10457 -0.89543,2 -2,2c-1.10457,0 -2,-0.89543 -2,-2c0.0011,-1.10411 0.89589,-1.9989 2,-2z"
+                                fill="#232328"></path>
+                            <path
+                                d="M36,11c2.20914,0 4,-1.79086 4,-4c0,-2.20914 -1.79086,-4 -4,-4c-2.20914,0 -4,1.79086 -4,4c0.00231,2.20818 1.79182,3.99769 4,4zM36,5c1.10457,0 2,0.89543 2,2c0,1.10457 -0.89543,2 -2,2c-1.10457,0 -2,-0.89543 -2,-2c0.00127,-1.10404 0.89596,-1.99873 2,-2z"
+                                fill="#232328"></path>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+            <!-- Pargate Button -->
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="25px" height="25px" viewBox="0,0,256,256">
+                <g fill="#fcc419" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                    stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                    font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                    style="mix-blend-mode: normal">
+                    <g transform="scale(5.12,5.12)">
+                        <path
+                            d="M15.5,0c-0.828,0 -1.5,0.672 -1.5,1.5v6c0,0.828 0.672,1.5 1.5,1.5h13c0.828,0 1.5,-0.672 1.5,-1.5v-6c0,-0.828 -0.672,-1.5 -1.5,-1.5zM6,2c-1.654,0 -3,1.346 -3,3v38c0,1.654 1.346,3 3,3h9v-5h-7v-34h4v-5zM32,2v5h4v6h5v-8c0,-1.654 -1.346,-3 -3,-3zM18,15c-0.552,0 -1,0.448 -1,1v33c0,0.553 0.448,1 1,1h28c0.553,0 1,-0.447 1,-1v-33c0,-0.552 -0.447,-1 -1,-1zM24,23h17c0.553,0 1,0.448 1,1c0,0.552 -0.447,1 -1,1h-17c-0.552,0 -1,-0.448 -1,-1c0,-0.552 0.448,-1 1,-1zM24,29h12c0.553,0 1,0.447 1,1c0,0.553 -0.447,1 -1,1h-12c-0.552,0 -1,-0.447 -1,-1c0,-0.553 0.448,-1 1,-1zM24,35h17c0.553,0 1,0.447 1,1c0,0.553 -0.447,1 -1,1h-17c-0.552,0 -1,-0.447 -1,-1c0,-0.553 0.448,-1 1,-1zM24,41h12c0.553,0 1,0.447 1,1c0,0.553 -0.447,1 -1,1h-12c-0.552,0 -1,-0.447 -1,-1c0,-0.553 0.448,-1 1,-1z">
+                        </path>
+                    </g>
+                </g>
+            </svg>
+            <!-- Boite Button -->
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="25px" height="25px" viewBox="0,0,256,256">
+                <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                    stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                    font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                    style="mix-blend-mode: normal">
+                    <g transform="scale(5.33333,5.33333)">
+                        <path d="M45,34v-16c0,-4.418 -3.582,-8 -8,-8h-21c-4.418,0 -8,3.582 -8,8v16z" fill="#fcc419">
+                        </path>
+                        <path
+                            d="M11,33c0,0.552 -0.448,1 -1,1h-6c-0.552,0 -1,-0.448 -1,-1v0c0,-0.552 0.448,-1 1,-1h6c0.552,0 1,0.448 1,1z"
+                            fill="#fcc419"></path>
+                        <path d="M16,12c-3.309,0 -6,2.691 -6,6v14h12v-14c0,-3.309 -2.691,-6 -6,-6z" fill="#0d47a1">
+                        </path>
+                        <path d="M28,4h6v4h-6z" fill="#ff3d00"></path>
+                        <path d="M28,6h2v11h-2z" fill="#ff3d00"></path>
+                        <path
+                            d="M29,16c-1.10457,0 -2,0.89543 -2,2c0,1.10457 0.89543,2 2,2c1.10457,0 2,-0.89543 2,-2c0,-1.10457 -0.89543,-2 -2,-2z"
+                            fill="#fcc419"></path>
+                        <path
+                            d="M29,17c-0.55228,0 -1,0.44772 -1,1c0,0.55228 0.44772,1 1,1c0.55228,0 1,-0.44772 1,-1c0,-0.55228 -0.44772,-1 -1,-1z"
+                            fill="#dd2c00"></path>
+                        <path d="M25,34h5v10h-5z" fill="#ffcc80"></path>
+                        <path d="M25,34h5v2h-5z" fill="#ffa726"></path>
+                        <path d="M13,21v9c0,1.025 0.975,2 2,2h7v-13h-7c-1.025,0 -2,0.975 -2,2z" fill="#cfd8dc"></path>
+                        <path d="M13,21v1l9,7v-2l-8.782,-6.831c-0.135,0.261 -0.218,0.542 -0.218,0.831z" fill="#78909c">
+                        </path>
+                    </g>
+                </g>
+            </svg>
+            <!-- Lock -->
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="25px" height="25px" viewBox="0,0,256,256">
+                <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                    stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                    font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                    style="mix-blend-mode: normal">
+                    <g transform="scale(5.33333,5.33333)">
+                        <path d="M30,41l-4,4h-4l-4,-4v-20h12v8l-2,2l2,2v2l-2,2l2,2z" fill="#fcc419"></path>
+                        <path
+                            d="M38,7.8c-0.5,-1.8 -2,-3.1 -3.7,-3.6c-2.4,-0.5 -6.1,-1.2 -10.3,-1.2c-4.2,0 -7.9,0.7 -10.3,1.2c-1.7,0.5 -3.2,1.8 -3.7,3.6c-0.5,1.7 -1,4.1 -1,6.7c0,2.6 0.5,5 1,6.7c0.5,1.8 1.9,3.1 3.7,3.5c2.4,0.6 6.1,1.3 10.3,1.3c4.2,0 7.9,-0.7 10.3,-1.2c1.8,-0.4 3.2,-1.8 3.7,-3.5c0.5,-1.7 1,-4.1 1,-6.7c0,-2.7 -0.5,-5.1 -1,-6.8zM29,13h-10c-1.1,0 -2,-0.9 -2,-2v-2c0,-0.6 3.1,-1 7,-1c3.9,0 7,0.4 7,1v2c0,1.1 -0.9,2 -2,2z"
+                            fill="#fcc419"></path>
+                        <path d="M23,26h2v19h-2z" fill="#fcc419"></path>
+                    </g>
+                </g>
+            </svg>
+            <h2 class="mr-1 font-extrabold">Admin</h2>
+            <!-- Gradient Vertical Separator -->
+            <div class="mr-2 h-6 w-0.5" style="background: #007bff"></div>
+            <!-- User -->
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="25px" height="25px" viewBox="0,0,256,256">
+                <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt"
+                    stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                    font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                    style="mix-blend-mode: normal">
+                    <g transform="scale(0.05905,0.05905)">
+                        <path
+                            d="M2167,37c1177,0 2131,954 2131,2130c0,325 -73,633 -203,908c132,131 214,312 214,513c0,398 -323,721 -721,721c-201,0 -382,-82 -513,-214c-275,130 -583,203 -908,203c-1176,0 -2130,-954 -2130,-2131c0,-1176 954,-2130 2130,-2130zM3588,3185c222,0 402,180 402,403c0,222 -180,402 -402,402c-223,0 -403,-180 -403,-402c0,-223 180,-403 403,-403zM825,3289c49,-53 116,-95 197,-130c138,-62 279,-122 413,-196c105,-58 202,-133 297,-209c25,-21 44,-81 33,-111c-29,-82 -66,-167 -119,-235c-106,-139 -165,-280 -114,-459c22,-85 7,-178 14,-268c31,-392 487,-661 847,-501c39,16 79,37 120,44c141,19 209,109 234,236c17,100 24,202 37,304c12,84 21,169 33,255c21,148 -42,267 -126,383c-53,73 -92,159 -125,243c-11,26 1,79 23,97c91,75 182,155 284,211c24,13 47,25 71,37c-145,156 -234,366 -234,596c0,84 12,165 34,242c-179,62 -371,95 -571,95c-542,0 -1027,-247 -1348,-634zM4021,3218l-2,-2l-3,-4l-2,-2l-1,-2l-2,-1l-3,-4l-2,-2l-2,-2l-1,-2l-6,-5l-1,-2l-2,-2v0l-7,-7l-2,-2c-2,-2 -5,-4 -7,-7l-2,-1l-2,-2c-2,-2 -5,-4 -7,-6v-1l-2,-1l-2,-2l-6,-5l-2,-2l-2,-1c-2,-2 -5,-4 -7,-7l-2,-1h-1l-7,-6l-2,-2l-2,-1l-8,-6l-2,-2c-3,-2 -6,-4 -9,-6l-2,-1l-2,-2l-6,-4l-2,-1c-90,-60 -198,-94 -313,-94c-315,0 -570,255 -570,570c0,115 34,223 94,313l1,2l4,6l2,2l1,2c2,3 4,6 6,9l2,2c2,2 4,5 6,8l1,2l2,2l6,7v1l1,2l7,7l1,2l2,2l5,6l2,2l1,2h1l6,7l2,2l1,2c3,2 5,5 7,7l2,2c2,2 5,4 7,7v0l2,2l2,1l5,6l2,1l2,2l2,2l4,3l1,2l2,1l2,2l4,3l2,2c99,85 228,136 370,136c314,0 569,-255 569,-569c0,-142 -51,-271 -136,-370zM3969,2975c111,-246 172,-520 172,-808c0,-1090 -884,-1973 -1974,-1973c-1090,0 -1973,883 -1973,1973c0,1090 883,1974 1973,1974c288,0 562,-61 808,-172c-69,-111 -109,-241 -109,-381c0,-399 323,-722 722,-722c140,0 270,40 381,109z"
+                            fill="#fcc419"></path>
+                        <path d="M-5070,817v-3l-4,2z" fill="#000000"></path>
+                        <path d="M-2698,1269h-3l3,4z" fill="#000000"></path>
+                        <path d="M-2794,1173h-3l3,4z" fill="#000000"></path>
+                        <path d="M-2342,3546v3l4,-3z" fill="#000000"></path>
+                    </g>
+                </g>
+            </svg>
+
+
+        </div>
+    </div>
+    <!-- End Header -->
+
+    <!-- Content -->
+    <div class="flex flex-col flex-auto">
+        <router-outlet *ngIf="true">
+
+        </router-outlet>
+    </div>
+    <!-- End Content -->
+
+    <!-- Footer -->
+    <div
+        class="relative flex flex-0 items-center justify-center w-full h-14 px-4 md:px-6 z-49 border-t bg-sky-600 dark:bg-sky-600 print:hidden">
+        <span class="font-medium text-white">Documania Courrier &copy; {{currentYear}}</span>
+    </div>
+    <!-- End Footer -->
+
+</div>
+
+<!-- Quick chat -->
+<!-- <quick-chat #quickChat="quickChat"></quick-chat> -->

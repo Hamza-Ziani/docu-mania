@@ -1,0 +1,154 @@
+<div class="absolute inset-0 flex flex-col min-w-0 overflow-hidden">
+    <mat-drawer-container class="flex-auto h-full bg-card dark:bg-transparent">
+        <mat-drawer-content class="flex flex-col bg-gray-100 dark:bg-transparent">
+            <!-- Main -->
+            <div class="flex flex-col flex-auto">
+               <!-- Header -->
+               <div class="flex items-center justify-between  sm:p-1 border-b bg-card dark:bg-transparent">
+                <div class="flex items-center">
+                    <!-- Button with Dark Mode Color -->
+                    <button mat-flat-button class="bg-accent text-on-accent mr-2">
+                        <mat-icon class="icon-size-5" svgIcon="feather:corner-up-left"></mat-icon>
+                        <ng-container *transloco="let t">
+                            <span class="ml-2 hidden sm:inline">{{t("reteur")}}</span>
+                        </ng-container>
+                    </button>
+
+                    <!-- Gradient Vertical Separator -->
+                    <div class="mr-2 h-8 w-0.5 bg-gradient-to-t from-blue-500 to-blue-700"></div>
+
+                    <!-- Title (Responsive text size) -->
+                    <div class="text-sm sm:text-lg md:text-xl font-extrabold tracking-tight leading-none">
+                        Courrier  Traites :
+                    </div>
+
+                </div>
+
+                <!-- Right Section: Folders/Files Info or Breadcrumbs -->
+                <div
+                    class="flex flex-col sm:flex-row items-start sm:items-center font-normal text-secondary text-sm sm:text-base">
+                    <ng-container>
+                        <div>Total : 4</div>
+                    </ng-container>
+                </div>
+            </div>
+            <!-- End Header -->
+
+                <!-- Line separator -->
+                <div class="w-full h-1 border-t-1" style="
+                        background: linear-gradient(to right, #ffc107, #007bff);
+                    ">
+                </div>
+
+                <!-- Courrier Traites-->
+                <mat-tab-group class="sm:px-2" mat-stretch-tabs="false" [animationDuration]="'0'">
+                    <mat-tab label="Courrier Traites">
+                        <ng-template matTabContent>
+                            <ng-container>
+                                <!-- Responsive form container -->
+                                <div class="flex justify-center">
+                                    <form class="flex flex-col p-4  bg-card shadow rounded overflow-hidden"
+                                        style="width: 60%;">
+                                        <div class="flex flex-col sm:flex-row">
+                                            <!-- Reference -->
+                                            <mat-form-field class="custom-min-height flex-auto sm:pr-3">
+                                                <mat-label>Référence :</mat-label>
+                                                <input type="text" matInput placeholder="Référence" />
+                                            </mat-form-field>
+
+
+                                        </div>
+                                        <!-- Statut -->
+                                        <mat-form-field class="flex-auto sm:pr-3">
+                                            <mat-label>Status :</mat-label>
+                                            <mat-select [placeholder]="'Status'">
+                                                <mat-option value="status1">Abandonee</mat-option>
+                                                <mat-option value="status2">En Cours</mat-option>
+                                                <mat-option value="status3">Cloture</mat-option>
+                                            </mat-select>
+
+                                        </mat-form-field>
+
+                                        <div class="flex flex-col sm:flex-row">
+                                            <!-- Date -->
+                                            <mat-form-field class="flex-auto sm:pr-3">
+                                                <mat-label>Date</mat-label>
+                                                <input matInput [matDatepicker]="picker1">
+                                                <mat-datepicker-toggle matSuffix [for]="picker1">
+                                                </mat-datepicker-toggle>
+                                                <mat-datepicker #picker1></mat-datepicker>
+                                            </mat-form-field>
+
+                                            <!-- Àu -->
+                                            <mat-form-field class="flex-auto sm:pr-3">
+                                                <mat-label>Àu</mat-label>
+                                                <input matInput [matDatepicker]="picker2">
+                                                <mat-datepicker-toggle matSuffix [for]="picker2">
+                                                </mat-datepicker-toggle>
+                                                <mat-datepicker #picker2></mat-datepicker>
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="flex flex-col sm:flex-row">
+                                            <!-- Type Courrier -->
+                                            <mat-form-field class="flex-auto sm:pr-3">
+                                                <mat-label>Types Courrier :</mat-label>
+                                                <mat-select (selectionChange)="switchType($event.value)">
+                                                    <mat-option value="Depart">Courrier Depart</mat-option>
+                                                    <mat-option value="Arrive">Courrier Arrive</mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+                                        </div>
+
+                                        <!-- Emetteur (Show only for Courrier Depart) -->
+                                        <mat-form-field class="flex-auto sm:pr-3" *ngIf="selectedType === 'Depart'">
+                                            <mat-label>Emetteur :</mat-label>
+                                            <mat-select>
+                                                <mat-option value="1">1</mat-option>
+                                                <mat-option value="2">2</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+
+                                        <!-- Destinataire (Show only for Courrier Arrive) -->
+                                        <mat-form-field class="flex-auto sm:pr-3" *ngIf="selectedType === 'Arrive'">
+                                            <mat-label>Destinataire(s) :</mat-label>
+                                            <mat-select>
+                                                <mat-option value="1">1</mat-option>
+                                                <mat-option value="2">2</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+
+
+
+                                        <!-- Objet : -->
+                                        <mat-form-field class="flex-auto sm:pr-3">
+                                            <mat-label>Objet :</mat-label>
+                                            <textarea matInput [rows]="3"
+                                                placeholder="A sentence or two to describe yourself"></textarea>
+                                        </mat-form-field>
+
+                                        <!-- Buttons -->
+                                        <div class="flex items-center justify-center p-2">
+                                            <button mat-flat-button type="button" mat-dialog-close color="warn"
+                                                class="px-6 ml-3">
+                                                <span>Annuler</span>
+                                                <mat-icon svgIcon="heroicons_outline:x-mark" class="mr-2"></mat-icon>
+                                            </button>
+
+                                            <button mat-flat-button color="primary" class="px-6 ml-3">
+                                                <span>Rechercher</span>
+                                                <mat-icon svgIcon="heroicons_solid:magnifying-glass" class="mr-2">
+                                                </mat-icon>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </ng-container>
+                        </ng-template>
+                    </mat-tab>
+                </mat-tab-group>
+                <!-- End Courrier Traites-->
+            </div>
+        </mat-drawer-content>
+    </mat-drawer-container>
+</div>

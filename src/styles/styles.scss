@@ -1,0 +1,58 @@
+
+:root {
+    --primary-color : #1475A9;
+    --white-color : #FFFFFF;
+    --yellow-color : #ffc107;
+    --secand-color :#66b0fd;
+    --green-color: #28a745;
+    --red-color : #dc3545;
+    --gray-color : #6c757d;
+    --black-color: #000000;
+    --focus-color :#fefedf;
+  }
+// @font-face {
+//     font-family: 'Century Gothic';
+//     src:local('Century Gothic'), local('Century Gothic'),url('../assets/fonts/century-gothic-font/CenturyGothic.ttf') format('truetype');
+// }
+
+// @font-face {
+//     font-family: 'Century Gothic Bold';
+//     src:local('Century Gothic Bold'),url('../assets/fonts/century-gothic-font/GOTHICB0.TTF') format('truetype');
+// }
+
+// @font-face {
+//     font-family: 'Century Gothic Regular';
+//     src:local('Century Gothic Regular'),url('../assets/fonts/century-gothic-font/GOTHIC.TTF') format('truetype');
+// }
+
+// @font-face {
+//     font-family: 'Century Gothic Regular TTF';
+//     src:local('Century Gothic Regular TTF'),url('../assets/fonts/century-gothic-font/Century\ Gothic.ttf') format('truetype');
+// }
+
+/* Apply the primary color to the header */
+.bg-primary-color {
+    background-color: var(--primary-color); /* Use the CSS variable */
+}
+
+.gold-color{
+    color: var(--yellow-color) !important;
+}
+
+.green-color{
+    color: var(--green-color) !important;
+}
+
+.primary-color{
+    color: var(--primary-color) !important;
+}
+.red-color{
+    color: var(--red-color) !important;
+}
+
+.gray-color{
+    color: var(--gray-color) !important;
+}
+.white-color{
+    color: var(--white-color)
+}

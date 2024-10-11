@@ -1,0 +1,85 @@
+{
+    "navbar": {
+        "ajoutercourrier": "Ajouter un Courrier",
+        "ajouterdocument": "Ajouter un Document",
+        "ajouterliaison": "Ajouter un Lien",
+        "courriercourrier": "Courrier à Courrier",
+        "documentcourrier": "Document à Courrier",
+        "courrierarchives": "Archives de Courrier",
+        "courrierequipe": "Courrier de Mon Équipe",
+        "recherchercourrier": "Rechercher un Courrier",
+        "rechercherdocument": "Rechercher un Document",
+        "courrierrecent": "Courrier Récent",
+        "courriertraites": "Courriers Traités",
+        "fluxcourriers": "Flux de Courriers",
+        "courrierfavoris": "Courrier Favori",
+        "preferences": "Préférences",
+        "recherchefrequentes": "Recherches Fréquentes",
+        "reports": "Rapports",
+        "searchresult": "Résultats de Recherche"
+    },
+    "common": {
+        "ajouter": "Ajouter",
+        "supprimer": "Supprimer",
+        "modifier": "Modifier",
+        "rechercher": "Rechercher",
+        "annuler": "Annuler",
+        "save": "Sauvegarder",
+        "emetteur": "Émetteur",
+        "destinataires": "Destinataires",
+        "ajouterfavoris": "Ajouter aux Favoris",
+        "close": "Fermer",
+        "precedent": "Précédent",
+        "suivant": "Suivant",
+        "retirerfavoris": "Retirer des Favoris",
+        "aucuncourrier": "Aucun Courrier",
+        "retour": "Retour",
+        "objet": "Objet",
+        "page": "Page",
+        "total": "Total",
+        "items": "Éléments",
+        "types": "Types",
+        "date": "Date",
+        "datedebit": "Date début",
+        "datefin": "Date fin",
+        "statut": "Statut",
+        "informations": "Informations"
+    },
+    "recents": {
+        "courriersrecents": "Courriers Récents",
+        "unjour": "Il y a 1 jour",
+        "deuxjours": "Il y a 2 jours",
+        "troisjours": "Il y a 3 jours",
+        "numerotation": "Numérotation",
+        "reference": "Référence",
+        "categories": "Catégories",
+        "proprietaire": "Propriétaire"
+    },
+    "favoris": {
+        "courrierfavoris": "Courrier Favori"
+    },
+    "equipe": {
+        "courrierequipe": "Courrier de Mon Équipe",
+        "listeutilisateurs": "Liste des utilisateurs"
+    },
+    "fluxcourriers": {
+        "fluxcourriers": "Flux Courriers"
+    },
+    "courriersfrequentes": {
+        "courriersfrequentes": "Courriers Fréquents"
+    },
+    "recharchecourrier": {
+        "recharchecourrier": "Rechercher Courrier"
+    },
+    "recharchedocument": {
+        "recharchedocument": "Rechercher Document",
+        "groupesdocuments": "Groupes de documents",
+        "typeDocument": "Type de Document",
+        "référence": "Référence",
+        "typescourrier": "Types de Courrier",
+        "moinsrecherche": "Moins de recherche",
+        "plusrecherche": "Plus de recherche",
+        "annotation": "Annotation",
+        "motifretour": "Motif de retour"
+    }
+}

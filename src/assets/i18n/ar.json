@@ -1,0 +1,85 @@
+{
+    "navbar": {
+        "ajoutercourrier": "إضافة بريد",
+        "ajouterdocument": "إضافة مستند",
+        "ajouterliaison": "إضافة رابط",
+        "courriercourrier": "بريد إلى بريد",
+        "documentcourrier": "مستند إلى بريد",
+        "courrierarchives": "أرشيف البريد",
+        "courrierequipe": "بريد فريقي",
+        "recherchercourrier": "بحث عن بريد",
+        "rechercherdocument": "بحث عن مستند",
+        "courrierrecent": "البريد الحديث",
+        "courriertraites": "البريد المعالج",
+        "fluxcourriers": "تدفق البريد",
+        "courrierfavoris": "البريد المفضل",
+        "preferences": "التفضيلات",
+        "recherchefrequentes": "البحث المتكرر",
+        "reports": "التقارير",
+        "searchresult": "نتائج البحث"
+    },
+    "common": {
+        "ajouter": "إضافة",
+        "supprimer": "حذف",
+        "modifier": "تعديل",
+        "rechercher": "بحث",
+        "annuler": "إلغاء",
+        "save": "حفظ",
+        "emetteur": "مرسل",
+        "destinataires": "المستلمون",
+        "ajouterfavoris": "إضافة إلى المفضلة",
+        "close": "إغلاق",
+        "precedent": "السابق",
+        "suivant": "التالي",
+        "retirerfavoris": "إزالة من المفضلة",
+        "aucuncourrier": "لا يوجد بريد",
+        "retour": "عودة",
+        "objet": "الموضوع",
+        "page": "صفحة",
+        "total": "إجمالي",
+        "items": "عناصر",
+        "types": "أنواع",
+        "date": "التاريخ",
+        "datedebit": "تاريخ البداية",
+        "datefin": "تاريخ النهاية",
+        "statut": "الحالة",
+        "informations": "معلومات"
+    },
+    "recents": {
+        "courriersrecents": "البريد الحديث",
+        "unjour": "قبل يوم",
+        "deuxjours": "قبل يومين",
+        "troisjours": "قبل ثلاثة أيام",
+        "numerotation": "الترقيم",
+        "reference": "المرجع",
+        "categories": "الفئات",
+        "proprietaire": "المالك"
+    },
+    "favoris": {
+        "courrierfavoris": "البريد المفضل"
+    },
+    "equipe": {
+        "courrierequipe": "بريد فريقي",
+        "listeutilisateurs": "قائمة المستخدمين"
+    },
+    "fluxcourriers": {
+        "fluxcourriers": "تدفق البريد"
+    },
+    "courriersfrequentes": {
+        "courriersfrequentes": "البريد المتكرر"
+    },
+    "recharchecourrier": {
+        "recharchecourrier": "بحث عن بريد"
+    },
+    "recharchedocument": {
+        "recharchedocument": "بحث عن مستند",
+        "groupesdocuments": "مجموعات المستندات",
+        "typeDocument": "نوع المستند",
+        "référence": "المرجع",
+        "typescourrier": "أنواع البريد",
+        "moinsrecherche": "بحث أقل",
+        "plusrecherche": "بحث أكثر",
+        "annotation": "تعليق",
+        "motifretour": "سبب الإرجاع"
+    }
+}

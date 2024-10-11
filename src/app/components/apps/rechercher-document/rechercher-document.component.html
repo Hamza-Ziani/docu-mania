@@ -1,0 +1,198 @@
+<div class="absolute inset-0 flex flex-col min-w-0 overflow-hidden">
+    <mat-drawer-container class="flex-auto h-full bg-card dark:bg-transparent">
+        <mat-drawer-content class="flex flex-col bg-gray-100 dark:bg-transparent">
+            <!-- Main -->
+            <div class="flex flex-col flex-auto">
+                <!-- Header -->
+                <div class="flex items-center justify-between p-2 border-b bg-card dark:bg-transparent">
+                    <div class="flex items-center space-x-2"> <!-- Added space-x-2 for horizontal spacing -->
+                        <!-- Button with Dark Mode Color -->
+                        <button mat-flat-button class="bg-accent text-on-accent">
+                            <mat-icon class="icon-size-5" svgIcon="feather:corner-up-left"></mat-icon>
+                            <ng-container>
+                                <span class="ml-2 hidden sm:inline">Retour</span>
+                            </ng-container>
+                        </button>
+
+                        <!-- Gradient Vertical Separator -->
+                        <div class="h-8 w-0.5 bg-gradient-to-t from-blue-500 to-blue-700"></div>
+
+                        <!-- Title-->
+                        <div class="text-xs sm:text-sm md:text-lg font-extrabold tracking-tight leading-none">
+                            Recharche Document :
+                        </div>
+                    </div>
+
+                    <!-- Right Section: Folders/Files Info or Breadcrumbs -->
+                    <div class="text-xs sm:text-sm md:text-lg font-medium tracking-tight leading-none mr-2">
+                        <mat-slide-toggle (change)="toggleForm($event)" class="text-white" labelPosition="before" color="primary">
+                            <span>Recherche en texte intégral!</span>
+                        </mat-slide-toggle>
+                    </div>
+                </div>
+                <!-- End Header -->
+
+
+                <!-- Line separator -->
+                <div class="w-full h-2 border-t-2" style="background: linear-gradient(to right, #ffc107, #007bff);">
+                </div>
+
+                <!-- Courrier Mon Equipe-->
+                <mat-tab-group class="sm:px-2" mat-stretch-tabs="false" [animationDuration]="'0'">
+                    <mat-tab label="Courrier Mon Equipe">
+                        <ng-template matTabContent>
+                            <div class="flex justify-center items-center ">
+                               
+                                <form *ngIf="isChecked" class="flex flex-col mt-2 p-4 bg-card shadow rounded overflow-hidden"
+                                    style="width: 80%;">
+                                    <div class="flex flex-col gt-xs:flex-row">
+                                        <mat-form-field class="flex-auto gt-xs:pr-3">
+                                            <mat-label>Groupes documents</mat-label>
+                                            <mat-select [placeholder]="'Username'">
+                                                <mat-option value="country-1">test</mat-option>
+                                                <mat-option value="country-2">tets1</mat-option>
+                                                <mat-option value="country-3">fdrrg</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                        <mat-form-field class="flex-auto gt-xs:pl-3">
+                                            <mat-label>Type de Document :</mat-label>
+                                            <mat-select [placeholder]="'status'">
+                                                <mat-option value="status1">document tets1</mat-option>
+                                                <mat-option value="status2">doc cours</mat-option>
+                                                <mat-option value="status3">test doc</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+
+                                    <div class="flex items-center justify-center p-2">
+                                        <!-- Anuler Button with Icon -->
+                                        <button mat-flat-button type="button" mat-dialog-close color="warn"
+                                            class="px-6 ml-3 mdc-button mdc-button--unelevated mat-mdc-unelevated-button mat-mdc-button-base"
+                                            mat-ripple-loader-class-name="mat-mdc-button-ripple">
+                                            <span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span>
+                                            <span class="mdc-button__label">Anuler</span>
+                                            <span class="mat-mdc-focus-indicator"></span>
+                                            <span class="mat-mdc-button-touch-target"></span>
+                                            <span class="mat-ripple mat-mdc-button-ripple"></span>
+                                            <mat-icon svgIcon="heroicons_outline:x-mark"
+                                                class="mr-2 text-white"></mat-icon>
+                                        </button>
+                                        <!-- Recherche Button with Icon -->
+                                        <button mat-flat-button=""
+                                            class="px-6 ml-3 mdc-button mdc-button--unelevated mat-mdc-unelevated-button mat-primary mat-mdc-button-base"
+                                            mat-ripple-loader-class-name="mat-mdc-button-ripple"
+                                            ng-reflect-color="primary"><span
+                                                class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span><span
+                                                class="mdc-button__label"> Rechercher </span><span
+                                                class="mat-mdc-focus-indicator"></span><span
+                                                class="mat-mdc-button-touch-target"></span><span
+                                                class="mat-ripple mat-mdc-button-ripple"></span>
+                                            <mat-icon svgIcon="heroicons_solid:magnifying-glass"
+                                                class="mr-2"></mat-icon>
+                                        </button>
+                                    </div>
+                                </form>
+                                
+
+
+                                
+                                <form *ngIf="!isChecked" class="flex flex-col mt-2 p-4 bg-card shadow rounded overflow-hidden"
+                                    style="width: 80%;">
+                                    <div class="flex flex-col gt-xs:flex-row">
+                                        <mat-form-field class="flex-auto gt-xs:pr-3">
+                                            <mat-label>Mot clé :</mat-label>
+                                            <mat-select [placeholder]="'Username'">
+                                                <mat-option value="country-1">test</mat-option>
+                                                <mat-option value="country-2">tets1</mat-option>
+                                                <mat-option value="country-3">fdrrg</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                        
+                                    </div>
+
+                                    <div class="flex items-center justify-center p-2">
+                                        <!-- Anuler Button with Icon -->
+                                        <button mat-flat-button type="button" mat-dialog-close color="warn"
+                                            class="px-6 ml-3 mdc-button mdc-button--unelevated mat-mdc-unelevated-button mat-mdc-button-base"
+                                            mat-ripple-loader-class-name="mat-mdc-button-ripple">
+                                            <span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span>
+                                            <span class="mdc-button__label">Anuler</span>
+                                            <span class="mat-mdc-focus-indicator"></span>
+                                            <span class="mat-mdc-button-touch-target"></span>
+                                            <span class="mat-ripple mat-mdc-button-ripple"></span>
+                                            <mat-icon svgIcon="heroicons_outline:x-mark"
+                                                class="mr-2 text-white"></mat-icon>
+                                        </button>
+                                        <!-- Recherche Button with Icon -->
+                                        <button mat-flat-button=""
+                                            class="px-6 ml-3 mdc-button mdc-button--unelevated mat-mdc-unelevated-button mat-primary mat-mdc-button-base"
+                                            mat-ripple-loader-class-name="mat-mdc-button-ripple"
+                                            ng-reflect-color="primary"><span
+                                                class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span><span
+                                                class="mdc-button__label"> Rechercher </span><span
+                                                class="mat-mdc-focus-indicator"></span><span
+                                                class="mat-mdc-button-touch-target"></span><span
+                                                class="mat-ripple mat-mdc-button-ripple"></span>
+                                            <mat-icon svgIcon="heroicons_solid:magnifying-glass"
+                                                class="mr-2"></mat-icon>
+                                        </button>
+                                    </div>
+                                </form>
+                               
+                            </div>
+                        </ng-template>
+                    </mat-tab>
+                </mat-tab-group>
+
+
+                <!-- End Courrier Mon Equipe-->
+                <!-- No Data template -->
+                <ng-template #NoData>
+                    <div class="flex flex-auto flex-col items-center justify-center bg-gray-100 dark:bg-transparent">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="100px" height="100px" viewBox="0,0,256,256">
+                            <defs>
+                                <linearGradient x1="24" y1="6.708" x2="24" y2="14.977" gradientUnits="userSpaceOnUse"
+                                    id="color-1">
+                                    <stop offset="0" stop-color="#f5b92b"></stop>
+                                    <stop offset="1" stop-color="#c28200"></stop>
+                                </linearGradient>
+                                <linearGradient x1="24" y1="10.854" x2="24" y2="40.983" gradientUnits="userSpaceOnUse"
+                                    id="color-2">
+                                    <stop offset="0" stop-color="#ffd869"></stop>
+                                    <stop offset="1" stop-color="#f6bf29"></stop>
+                                </linearGradient>
+                                <linearGradient x1="20.398" y1="20.086" x2="28.857" y2="33.113"
+                                    gradientUnits="userSpaceOnUse" id="color-3">
+                                    <stop offset="0" stop-color="#f44f5a"></stop>
+                                    <stop offset="0.443" stop-color="#ee3d4a"></stop>
+                                    <stop offset="1" stop-color="#e52030"></stop>
+                                </linearGradient>
+                            </defs>
+                            <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                                stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                                font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                                style="mix-blend-mode: normal">
+                                <g transform="scale(5.33333,5.33333)">
+                                    <path
+                                        d="M24.414,10.414l-2.536,-2.536c-0.562,-0.562 -1.325,-0.878 -2.121,-0.878h-14.757c-1.105,0 -2,0.895 -2,2v30c0,1.105 0.895,2 2,2h38c1.105,0 2,-0.895 2,-2v-26c0,-1.105 -0.895,-2 -2,-2h-17.172c-0.53,0 -1.039,-0.211 -1.414,-0.586z"
+                                        fill="url(#color-1)"></path>
+                                    <path
+                                        d="M21.586,14.414l3.268,-3.268c0.093,-0.093 0.22,-0.146 0.353,-0.146h17.793c1.105,0 2,0.895 2,2v26c0,1.105 -0.895,2 -2,2h-38c-1.105,0 -2,-0.895 -2,-2v-23.5c0,-0.276 0.224,-0.5 0.5,-0.5h16.672c0.53,0 1.039,-0.211 1.414,-0.586z"
+                                        fill="url(#color-2)"></path>
+                                    <path
+                                        d="M24,23.25c0,0 2.015,-2.25 4.5,-2.25c2.485,0 4.5,2.042 4.5,4.5c0,4.23 -6.628,9.059 -8.508,10.344c-0.298,0.204 -0.685,0.204 -0.983,0c-1.881,-1.285 -8.509,-6.114 -8.509,-10.344c0,-2.458 2.015,-4.5 4.5,-4.5c2.485,0 4.5,2.25 4.5,2.25z"
+                                        fill="url(#color-3)"></path>
+                                </g>
+                            </g>
+                        </svg>
+                        <div class="mt-4 text-2xl font-semibold tracking-tight text-secondary">
+                            Aucun courrier a Mon Equipe!
+                        </div>
+                    </div>
+                </ng-template>
+                <!-- End No Data template -->
+            </div>
+        </mat-drawer-content>
+    </mat-drawer-container>
+</div>

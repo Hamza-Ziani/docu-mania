@@ -1,0 +1,361 @@
+<div class="flex flex-col flex-auto min-w-0">
+
+    <!-- Header -->
+    <!-- <div class="bg-card">
+        <div class="flex flex-col w-full max-w-screen-xl mx-auto px-6 sm:px-8">
+            <div class="flex flex-col sm:flex-row flex-auto sm:items-center min-w-0 my-2 sm:my-2">
+                <div class="flex flex-wrap justify-between gap-2 w-full">
+                    <button class="bg-accent small-button w-25 h-8" mat-flat-button [color]="'accent'">
+                        <mat-icon class="icon-size-4" [svgIcon]="'heroicons_solid:building-office'"></mat-icon>
+                        <span class="ml-1 text-xs">Organisme</span>
+                    </button>
+                    <button class="small-button w-25 h-8" mat-flat-button [color]="'primary'">
+                        <mat-icon class="icon-size-4" [svgIcon]="'heroicons_solid:chart-bar'"></mat-icon>
+                        <span class="ml-1 text-xs">Organigramme</span>
+                    </button>
+                    <button class="small-button w-25 h-8" mat-flat-button [color]="'primary'">
+                        <mat-icon class="icon-size-4" [svgIcon]="'heroicons_solid:users'"></mat-icon>
+                        <span class="ml-1 text-xs">Utilisateurs</span>
+                    </button>
+                    <button class="small-button w-25 h-8" mat-flat-button [color]="'primary'">
+                        <mat-icon class="icon-size-4" [svgIcon]="'heroicons_solid:envelope'"></mat-icon>
+                        <span class="ml-1 text-xs">Types courrier</span>
+                    </button>
+                    <button class="small-button w-25 h-8" mat-flat-button [color]="'primary'">
+                        <mat-icon class="icon-size-4" [svgIcon]="'heroicons_solid:document'"></mat-icon>
+                        <span class="ml-1 text-xs">Types document</span>
+                    </button>
+                    <button class="small-button w-25 h-8" mat-flat-button [color]="'primary'">
+                        <mat-icon class="icon-size-4" [svgIcon]="'heroicons_solid:folder'"></mat-icon>
+                        <span class="ml-1 text-xs">Groupes documents</span>
+                    </button>
+                    <button class="small-button w-25 h-8" mat-flat-button [color]="'primary'">
+                        <mat-icon class="icon-size-4" [svgIcon]="'heroicons_solid:tag'"></mat-icon>
+                        <span class="ml-1 text-xs">Catégories courrier</span>
+                    </button>
+                    <button class="small-button w-25 h-8" mat-flat-button [color]="'primary'">
+                        <mat-icon class="icon-size-4" [svgIcon]="'heroicons_solid:adjustments-horizontal'"></mat-icon>
+                        <span class="ml-1 text-xs">Attributs</span>
+                    </button>
+                    <button class="small-button w-25 h-8" mat-flat-button [color]="'primary'">
+                        <mat-icon class="icon-size-4" [svgIcon]="'heroicons_solid:cog'"></mat-icon>
+                        <span class="ml-1 text-xs">Processus</span>
+                    </button>
+                    <button class="small-button w-25 h-8" mat-flat-button [color]="'primary'">
+                        <mat-icon class="icon-size-4" [svgIcon]="'heroicons_solid:shield-check'"></mat-icon>
+                        <span class="ml-1 text-xs">Security</span>
+                    </button>
+                    <button class="small-button w-25 h-8" mat-flat-button [color]="'primary'">
+                        <mat-icon class="icon-size-4" [svgIcon]="'heroicons_solid:users'"></mat-icon>
+                        <span class="ml-1 text-xs">Profils d'absence</span>
+                    </button>
+                    <button class="small-button w-25 h-8" mat-flat-button [color]="'primary'">
+                        <mat-icon class="icon-size-4" [svgIcon]="'heroicons_solid:bell'"></mat-icon>
+                        <span class="ml-1 text-xs">Notification</span>
+                    </button>
+                    <button class="small-button w-25 h-8" mat-flat-button [color]="'primary'">
+                        <mat-icon class="icon-size-4" [svgIcon]="'heroicons_solid:clipboard-document-list'"></mat-icon>
+                        <span class="ml-1 text-xs">Registre électronique</span>
+                    </button>
+                    <button class="small-button w-25 h-8" mat-flat-button [color]="'primary'">
+                        <mat-icon class="icon-size-4" [svgIcon]="'heroicons_solid:user-group'"></mat-icon>
+                        <span class="ml-1 text-xs">Destinataires</span>
+                    </button>
+                    <button class="small-button w-25 h-8" mat-flat-button [color]="'primary'">
+                        <mat-icon class="icon-size-4" [svgIcon]="'heroicons_solid:users'"></mat-icon>
+                        <span class="ml-1 text-xs">Emetteurs</span>
+                    </button>
+                    <button class="small-button w-25 h-8" mat-flat-button [color]="'primary'">
+                        <mat-icon class="icon-size-4" [svgIcon]="'heroicons_solid:server'"></mat-icon>
+                        <span class="ml-1 text-xs">LDAP</span>
+                    </button>
+                    <button class="small-button w-25 h-8" mat-flat-button [color]="'primary'">
+                        <mat-icon class="icon-size-4" [svgIcon]="'heroicons_solid:hard-drive'"></mat-icon>
+                        <span class="ml-1 text-xs">Volumes de stockage</span>
+                    </button>
+                    <button class="small-button w-25 h-8" mat-flat-button [color]="'primary'">
+                        <mat-icon class="icon-size-4" [svgIcon]="'heroicons_solid:users'"></mat-icon>
+                        <span class="ml-1 text-xs">Utilisateurs connectés</span>
+                    </button>
+                    <button class="small-button w-25 h-8" mat-flat-button [color]="'primary'">
+                        <mat-icon class="icon-size-4" [svgIcon]="'heroicons_solid:user-circle'"></mat-icon>
+                        <span class="ml-1 text-xs">Bases de données</span>
+                    </button>
+                    <button class="small-button w-25 h-8" mat-flat-button [color]="'primary'">
+                        <mat-icon class="icon-size-4" [svgIcon]="'heroicons_solid:database'"></mat-icon>
+                        <span class="ml-1 text-xs">Configuration de bordereau</span>
+                    </button>
+                    <button class="small-button w-25 h-8" mat-flat-button [color]="'primary'">
+                        <mat-icon class="icon-size-4" [svgIcon]="'heroicons_solid:chart-pie'"></mat-icon>
+                        <span class="ml-1 text-xs">Configuration de rapport</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- End Header -->
+
+    <!-- <div class="flex-auto border-t -mt-px pt-4 sm:pt-6">
+        <div class="w-full max-w-screen-xl mx-auto">
+          <mat-tab-group class="sm:px-2 custom-tab-group bg-gray-100 rounded-lg shadow-md" mat-stretch-tabs="false" [animationDuration]="'0'">
+             hddfhd
+          </mat-tab-group>
+        </div>
+      </div> -->
+
+   <!-- Main -->
+   <div class="flex-auto border-t -mt-px pt-4 sm:pt-6">
+    <div class="w-full max-w-screen-xl mx-auto">
+      <!-- Tabs -->
+      <mat-tab-group class="sm:px-2 custom-tab-group blue-tabs"
+      mat-stretch-tabs="false"
+      [animationDuration]="'0'">
+
+        <!-- Organisme -->
+        <mat-tab label="Organisme">
+          <ng-template matTabLabel>
+            <mat-icon class="icon-size-4 text-white">business</mat-icon> Organisme
+          </ng-template>
+          <ng-template matTabContent>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full min-w-0">
+              <h1>Organisme</h1>
+            </div>
+          </ng-template>
+        </mat-tab>
+
+        <!-- Organigramme -->
+        <mat-tab label="Organigramme">
+          <ng-template matTabLabel>
+            <mat-icon class="icon-size-4 text-white">account_tree</mat-icon> Organigramme
+          </ng-template>
+          <ng-template matTabContent>
+            <div class="grid grid-cols-1 sm:grid-cols-6 gap-6 w-full min-w-0">
+                <h2>Organigramme</h2>
+            </div>
+          </ng-template>
+        </mat-tab>
+
+        <!-- Utilisateurs -->
+        <mat-tab label="Utilisateurs">
+          <ng-template matTabLabel>
+            <mat-icon class="icon-size-4 text-white">people</mat-icon> Utilisateurs
+          </ng-template>
+          <ng-template matTabContent>
+            <div class="grid grid-cols-1 sm:grid-cols-6 gap-6 w-full min-w-0">
+              <h2>Utilisateurs</h2>
+            </div>
+          </ng-template>
+        </mat-tab>
+
+        <!-- Types Courries -->
+        <mat-tab label="Types Courries">
+          <ng-template matTabLabel>
+            <mat-icon class="icon-size-4 text-white">description</mat-icon> Types Courries
+          </ng-template>
+          <ng-template matTabContent>
+            <div class="grid grid-cols-1 sm:grid-cols-6 gap-6 w-full min-w-0">
+              <h2>Types Courries</h2>
+            </div>
+          </ng-template>
+        </mat-tab>
+
+        <!-- Types Documents -->
+        <mat-tab label="Types Documents">
+          <ng-template matTabLabel>
+            <mat-icon class="icon-size-4 text-white">folder</mat-icon> Types Documents
+          </ng-template>
+          <ng-template matTabContent>
+            <div class="grid grid-cols-1 sm:grid-cols-6 gap-6 w-full min-w-0">
+              <h2>Types Documents</h2>
+            </div>
+          </ng-template>
+        </mat-tab>
+
+        <!-- Groups Documents -->
+        <mat-tab label="Groups Documents">
+          <ng-template matTabLabel>
+            <mat-icon class="icon-size-4 text-white">group</mat-icon> Groups Documents
+          </ng-template>
+          <ng-template matTabContent>
+            <div class="grid grid-cols-1 sm:grid-cols-6 gap-6 w-full min-w-0">
+              <h2>Groups Documents</h2>
+            </div>
+          </ng-template>
+        </mat-tab>
+
+        <!-- Categories Courriers -->
+        <mat-tab label="Categories Courriers">
+          <ng-template matTabLabel>
+            <mat-icon class="icon-size-4 text-white">category</mat-icon> Categories Courriers
+          </ng-template>
+          <ng-template matTabContent>
+            <div class="grid grid-cols-1 sm:grid-cols-6 gap-6 w-full min-w-0">
+              <h2>Categories Courriers</h2>
+            </div>
+          </ng-template>
+        </mat-tab>
+
+        <!-- Attributs -->
+        <mat-tab label="Attributs">
+          <ng-template matTabLabel>
+            <mat-icon class="icon-size-4 text-white">list</mat-icon> Attributs
+          </ng-template>
+          <ng-template matTabContent>
+            <div class="grid grid-cols-1 sm:grid-cols-6 gap-6 w-full min-w-0">
+              <h2>Attributs</h2>
+            </div>
+          </ng-template>
+        </mat-tab>
+
+        <!-- Preccess -->
+        <mat-tab label="Preccess">
+          <ng-template matTabLabel>
+            <mat-icon class="icon-size-4 text-white">sync_alt</mat-icon> Preccess
+          </ng-template>
+          <ng-template matTabContent>
+            <div class="grid grid-cols-1 sm:grid-cols-6 gap-6 w-full min-w-0">
+              <h2>Preccess</h2>
+            </div>
+          </ng-template>
+        </mat-tab>
+
+        <!-- Security -->
+        <mat-tab label="Security">
+          <ng-template matTabLabel>
+            <mat-icon class="icon-size-4 text-white">security</mat-icon> Security
+          </ng-template>
+          <ng-template matTabContent>
+            <div class="grid grid-cols-1 sm:grid-cols-6 gap-6 w-full min-w-0">
+              <h2>Security</h2>
+            </div>
+          </ng-template>
+        </mat-tab>
+
+        <!-- Profile D'absence -->
+        <mat-tab label="Profile D'absence">
+          <ng-template matTabLabel>
+            <mat-icon class="icon-size-4 text-white">event_busy</mat-icon> Profile D'absence
+          </ng-template>
+          <ng-template matTabContent>
+            <div class="grid grid-cols-1 sm:grid-cols-6 gap-6 w-full min-w-0">
+              <h2>Profile D'absence</h2>
+            </div>
+          </ng-template>
+        </mat-tab>
+
+        <!-- Notifications -->
+        <mat-tab label="Notifications">
+          <ng-template matTabLabel>
+            <mat-icon class="icon-size-4 text-white">notifications</mat-icon> Notifications
+          </ng-template>
+          <ng-template matTabContent>
+            <div class="grid grid-cols-1 sm:grid-cols-6 gap-6 w-full min-w-0">
+              <h2>Notifications</h2>
+            </div>
+          </ng-template>
+        </mat-tab>
+
+        <!-- Register Electronique -->
+        <mat-tab label="Register Electronique">
+          <ng-template matTabLabel>
+            <mat-icon class="icon-size-4 text-white">storage</mat-icon> Register Electronique
+          </ng-template>
+          <ng-template matTabContent>
+            <div class="grid grid-cols-1 sm:grid-cols-6 gap-6 w-full min-w-0">
+              <h2>Register Electronique</h2>
+            </div>
+          </ng-template>
+        </mat-tab>
+
+        <!-- Destinataire -->
+        <mat-tab label="Destinataire">
+          <ng-template matTabLabel>
+            <mat-icon class="icon-size-4 text-white">send</mat-icon> Destinataire
+          </ng-template>
+          <ng-template matTabContent>
+            <div class="grid grid-cols-1 sm:grid-cols-6 gap-6 w-full min-w-0">
+              <h2>Destinataire</h2>
+            </div>
+          </ng-template>
+        </mat-tab>
+
+        <!-- Emetteurs -->
+        <mat-tab label="Emetteurs">
+          <ng-template matTabLabel>
+            <mat-icon class="icon-size-4 text-white">reply</mat-icon> Emetteurs
+          </ng-template>
+          <ng-template matTabContent>
+            <div class="grid grid-cols-1 sm:grid-cols-6 gap-6 w-full min-w-0">
+              <h2>Emetteurs</h2>
+            </div>
+          </ng-template>
+        </mat-tab>
+
+        <!-- LDAP -->
+        <mat-tab label="LDAP">
+          <ng-template matTabLabel>
+            <mat-icon class="icon-size-4 text-white">settings_ethernet</mat-icon> LDAP
+          </ng-template>
+          <ng-template matTabContent>
+            <div class="grid grid-cols-1 sm:grid-cols-6 gap-6 w-full min-w-0">
+              <h2>LDAP</h2>
+            </div>
+          </ng-template>
+        </mat-tab>
+
+        <!-- Volume De Stockage -->
+        <mat-tab label="Volume De Stockage">
+          <ng-template matTabLabel>
+            <mat-icon class="icon-size-4 text-white">storage</mat-icon> Volume De Stockage
+          </ng-template>
+          <ng-template matTabContent>
+            <div class="grid grid-cols-1 sm:grid-cols-6 gap-6 w-full min-w-0">
+              <h2>Volume De Stockage</h2>
+            </div>
+          </ng-template>
+        </mat-tab>
+
+        <!-- Utilisateurs Connectes -->
+        <mat-tab label="Utilisateurs Connectes">
+          <ng-template matTabLabel>
+            <mat-icon class="icon-size-4 text-white">person</mat-icon> Utilisateurs Connectes
+          </ng-template>
+          <ng-template matTabContent>
+            <div class="grid grid-cols-1 sm:grid-cols-6 gap-6 w-full min-w-0">
+              <h2>Utilisateurs Connectes</h2>
+            </div>
+          </ng-template>
+        </mat-tab>
+
+        <!-- Base De Donnes -->
+        <mat-tab label="Base De Donnes">
+          <ng-template matTabLabel>
+            <mat-icon class="icon-size-4 text-white">database</mat-icon> Base De Donnes
+          </ng-template>
+          <ng-template matTabContent>
+            <div class="grid grid-cols-1 sm:grid-cols-6 gap-6 w-full min-w-0">
+              <h2>Base De Donnes</h2>
+            </div>
+          </ng-template>
+        </mat-tab>
+
+        <!-- Configuration de Bordereau -->
+        <mat-tab label="Configuration de Bordereau">
+          <ng-template matTabLabel>
+            <mat-icon class="icon-size-4 text-white">settings</mat-icon> Configuration de Bordereau
+          </ng-template>
+          <ng-template matTabContent>
+            <div class="grid grid-cols-1 sm:grid-cols-6 gap-6 w-full min-w-0">
+              <h2>Configuration de Bordereau</h2>
+            </div>
+          </ng-template>
+        </mat-tab>
+
+      </mat-tab-group>
+    </div>
+   </div>
+
+
+
+
+</div>

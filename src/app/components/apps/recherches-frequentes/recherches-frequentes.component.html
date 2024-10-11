@@ -1,0 +1,261 @@
+<ng-container *ngIf="!result; else noResult">
+    <app-search-result></app-search-result>
+</ng-container>
+
+<ng-template #noResult>
+    <div class="absolute inset-0 flex flex-col min-w-0 overflow-hidden">
+        <mat-drawer-container class="flex-auto h-full bg-card dark:bg-transparent">
+            <!-- Drawer -->
+            <mat-drawer #matDrawer class="w-full sm:w-100 dark:bg-gray-900" [mode]="drawerMode" [opened]="false"
+                [position]="'end'" [disableClose]="true">
+                <div class="p-4">
+                    <!-- Close Button -->
+                    <button mat-icon-button color="warn" (click)="closeDrawer()">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                    <!-- Display your data here -->
+                    <div>
+                        <div class="flex flex-col flex-auto p-2 md:p-8">
+
+                            <!-- Information -->
+                            <div class="text-lg font-medium mt-8">Information</div>
+                            <div class="flex flex-col mt-4 border-t border-b divide-y font-medium">
+                                <div class="flex items-center justify-between py-3">
+                                    <div class="text-secondary">Created By</div>
+                                    <div>createdBy</div>
+                                </div>
+                                <div class="flex items-center justify-between py-3">
+                                    <div class="text-secondary">Created At</div>
+                                    <div>createdAt</div>
+                                </div>
+                                <div class="flex items-center justify-between py-3">
+                                    <div class="text-secondary">Modified At</div>
+                                    <div>modifiedAt</div>
+                                </div>
+                                <div class="flex items-center justify-between py-3">
+                                    <div class="text-secondary">Size</div>
+                                    <div>.size</div>
+                                </div>
+                                <ng-container>
+                                    <div class="flex items-center justify-between py-3">
+                                        <div class="text-secondary">Contents</div>
+                                        <div>contents</div>
+                                    </div>
+                                </ng-container>
+                            </div>
+
+                            <!-- Actions -->
+                            <div class="grid grid-cols-2 gap-4 w-full mt-8">
+                                <!-- Anuler Button with Icon -->
+
+                                <button mat-flat-button type="button" (click)="closeDrawer()" color="warn"
+                                    class="px-6 ml-3 mdc-button mdc-button--unelevated mat-mdc-unelevated-button mat-mdc-button-base"
+                                    mat-ripple-loader-class-name="mat-mdc-button-ripple">
+                                    <span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span>
+                                    <span class="mdc-button__label">Close</span>
+                                    <span class="mat-mdc-focus-indicator"></span>
+                                    <span class="mat-mdc-button-touch-target"></span>
+                                    <span class="mat-ripple mat-mdc-button-ripple"></span>
+                                    <mat-icon svgIcon="heroicons_outline:x-mark" class="mr-2 text-white"></mat-icon>
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </mat-drawer>
+            <!-- End Drawer -->
+
+            <mat-drawer-content class="flex flex-col bg-gray-100 dark:bg-transparent">
+                <!-- Main -->
+                <div class="flex flex-col flex-auto">
+                   <!-- Header -->
+                <div class="flex items-center justify-between  sm:p-1 border-b bg-card dark:bg-transparent">
+                    <div class="flex items-center">
+                        <!-- Button with Dark Mode Color -->
+                        <button  mat-flat-button class="bg-accent text-on-accent mr-2">
+                            <mat-icon class="icon-size-5" svgIcon="feather:corner-up-left"></mat-icon>
+                            <ng-container *transloco="let t">
+                                <span class="ml-2 hidden sm:inline">{{t("reteur")}}</span>
+                            </ng-container>
+                        </button>
+
+                        <!-- Gradient Vertical Separator -->
+                        <div class="mr-2 h-8 w-0.5 bg-gradient-to-t from-blue-500 to-blue-700"></div>
+
+                        <!-- Title (Responsive text size) -->
+                        <div class="text-sm sm:text-lg md:text-xl font-extrabold tracking-tight leading-none">
+                            Recharche Courriers Frequentes :
+                        </div>
+
+                    </div>
+
+                    <!-- Right Section: Folders/Files Info or Breadcrumbs -->
+                    <div
+                        class="flex flex-col sm:flex-row items-start sm:items-center font-normal text-secondary text-sm sm:text-base">
+                        <ng-container>
+                            <div class="mr-2">Total :4</div>
+                        </ng-container>
+                    </div>
+                </div>
+                <!-- End Header -->
+
+                    <!-- Line separator -->
+                    <div class="w-full h-1 border-t-1" style="background: linear-gradient(to right, #ffc107, #007bff);">
+                    </div>
+                    <!-- Recherches frequentes -->
+                    <mat-tab-group class="sm:px-2" mat-stretch-tabs="false" [animationDuration]="'0'">
+                        <mat-tab label="Recherches frequentes">
+                            <ng-template matTabContent>
+                                <div class="flex justify-center items-center">
+                                    <ng-container>
+                                        <div
+                                            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 w-full min-w-0">
+                                            <div
+                                                class="flex flex-col flex-auto p-2 bg-card shadow rounded-2xl overflow-hidden">
+                                                <div class="flex items-start justify-between">
+                                                    <div class="text-lg font-medium tracking-tight leading-6 truncate">
+                                                        Enregister One
+                                                    </div>
+                                                    <div class=" -mt-2 -mr-3">
+                                                        <button mat-icon-button [matMenuTriggerFor]="folderMenu">
+                                                            <mat-icon class="icon-size-5"
+                                                                svgIcon="heroicons_mini:ellipsis-vertical"></mat-icon>
+                                                        </button>
+                                                        <mat-menu #folderMenu="matMenu">
+                                                            <button mat-menu-item>
+                                                                <mat-icon class="icon-size-5 icon-color"
+                                                                    svgIcon="heroicons_outline:rocket-launch">
+                                                                </mat-icon>
+                                                                Executer
+                                                            </button>
+                                                            <button mat-menu-item (click)="openConfirmationDialog()">
+                                                                Delete
+                                                                <mat-icon class="icon-size-5"
+                                                                    svgIcon="heroicons_mini:trash" color="warn">
+                                                                </mat-icon>
+                                                            </button>
+                                                        </mat-menu>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-col items-center ml-2">
+                                                    <div
+                                                        class="flex text-2xl sm:text-2xl tracking-tight leading-none items-center">
+                                                        <button (click)="result = !result">
+                                                            <svg width="70px" viewBox="0 -3.66 65.015 65.015"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <g id="Group_99" data-name="Group 99"
+                                                                    transform="translate(-107.858 -217.309)">
+                                                                    <g id="Group_97" data-name="Group 97">
+                                                                        <path id="Path_247" data-name="Path 247"
+                                                                            d="M158.251,220.766H133.473l-5.725-3.457H114.226a2.911,2.911,0,0,0-2.912,2.912v30.934a2.911,2.911,0,0,0,2.912,2.912h44.025a2.911,2.911,0,0,0,2.911-2.912V223.676A2.911,2.911,0,0,0,158.251,220.766Z"
+                                                                            fill="#f7971d"></path>
+                                                                        <path id="Path_248" data-name="Path 248"
+                                                                            d="M161.162,242.6V227.133a2.914,2.914,0,0,0-2.911-2.914H114.226a2.914,2.914,0,0,0-2.912,2.914V242.6Z"
+                                                                            fill="#dce2e9"></path>
+                                                                        <path id="Path_249" data-name="Path 249"
+                                                                            d="M158.251,220.766H133.473l-5.725-3.457H114.226a2.911,2.911,0,0,0-2.912,2.912V221.6a2.911,2.911,0,0,1,2.912-2.912h13.522l5.725,3.455h24.778a2.913,2.913,0,0,1,2.911,2.912v-1.383A2.911,2.911,0,0,0,158.251,220.766Z"
+                                                                            fill="#ffc52f" opacity="0.5"
+                                                                            style="mix-blend-mode: screen; isolation: isolate;">
+                                                                        </path>
+                                                                        <path id="Path_250" data-name="Path 250"
+                                                                            d="M161.707,226.293H110.771a2.913,2.913,0,0,0-2.913,2.913l3.456,30.933a2.911,2.911,0,0,0,2.912,2.912h44.025a2.911,2.911,0,0,0,2.911-2.912l3.455-30.933A2.912,2.912,0,0,0,161.707,226.293Z"
+                                                                            fill="#ffc52f"></path>
+                                                                        <path id="Path_251" data-name="Path 251"
+                                                                            d="M110.771,227.676h50.936a2.911,2.911,0,0,1,2.83,2.254l.08-.724a2.912,2.912,0,0,0-2.91-2.913H110.771a2.913,2.913,0,0,0-2.913,2.913l.081.724A2.911,2.911,0,0,1,110.771,227.676Z"
+                                                                            fill="#ffc52f" opacity="0.5"
+                                                                            style="mix-blend-mode: screen; isolation: isolate;">
+                                                                        </path>
+                                                                    </g>
+                                                                    <path id="Path_252" data-name="Path 252"
+                                                                        d="M161.162,260.139l.592-5.3a14.7,14.7,0,1,0-27.687,8.211h24.184A2.911,2.911,0,0,0,161.162,260.139Z"
+                                                                        fill="#8c93a1" opacity="0.6"
+                                                                        style="mix-blend-mode: multiply; isolation: isolate;">
+                                                                    </path>
+                                                                    <g id="Group_98" data-name="Group 98">
+                                                                        <rect id="Rectangle_36" data-name="Rectangle 36"
+                                                                            width="4.156" height="12.401"
+                                                                            transform="translate(157.7 262.706) rotate(-45)"
+                                                                            fill="#dce2e9"></rect>
+                                                                        <path id="Path_253" data-name="Path 253"
+                                                                            d="M165.421,252.721a14.7,14.7,0,1,1-14.7-14.7A14.7,14.7,0,0,1,165.421,252.721Z"
+                                                                            fill="#dce2e9"></path>
+                                                                        <path id="Path_254" data-name="Path 254"
+                                                                            d="M161.682,252.721a10.964,10.964,0,1,1-10.964-10.965A10.965,10.965,0,0,1,161.682,252.721Z"
+                                                                            fill="#8c93a1"></path>
+                                                                        <path id="Path_255" data-name="Path 255"
+                                                                            d="M150.718,262.616a9.895,9.895,0,1,1,9.894-9.9A9.9,9.9,0,0,1,150.718,262.616Z"
+                                                                            fill="#5a6271" opacity="0.6"></path>
+                                                                        <path id="Path_256" data-name="Path 256"
+                                                                            d="M141.833,253.735a9.895,9.895,0,0,1,16.368-7.484A9.892,9.892,0,1,0,144.247,260.2,9.843,9.843,0,0,1,141.833,253.735Z"
+                                                                            fill="#5a6271" opacity="0.6"></path>
+                                                                        <path id="Path_257" data-name="Path 257"
+                                                                            d="M150.718,257.606a4.885,4.885,0,1,1,4.885-4.885A4.888,4.888,0,0,1,150.718,257.606Z"
+                                                                            fill="#5a6271"></path>
+                                                                        <path id="Path_258" data-name="Path 258"
+                                                                            d="M147.01,258.946a1.9,1.9,0,1,1,1.9-1.9A1.9,1.9,0,0,1,147.01,258.946Z"
+                                                                            fill="#f3f3f3" opacity="0.5"></path>
+                                                                        <path id="Path_259" data-name="Path 259"
+                                                                            d="M157.45,251.192c-.937.937-2.879.517-4.336-.94s-1.879-3.4-.942-4.335,2.879-.516,4.337.941S158.385,250.256,157.45,251.192Z"
+                                                                            fill="#f3f3f3" opacity="0.5"></path>
+                                                                        <path id="Path_260" data-name="Path 260"
+                                                                            d="M160.6,267.028l7.219,7.22a3.055,3.055,0,0,0,4.3-4.3l-7.219-7.219Z"
+                                                                            fill="#5a6271"></path>
+                                                                    </g>
+                                                                </g>
+                                                            </svg>
+                                                        </button>
+                                                        <!-- Gradient Vertical Separator -->
+                                                        <div class="mx-10 h-20 w-0.5 bg-gray-500"></div>
+                                                        <div class="flex flex-col items-start">
+                                                            <button type="button" (click)="openDetailsDrawer(1)">
+                                                                <i
+                                                                    class="fa-solid fa-circle-info green-color fa-2x"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div
+                                                        class="flex items-center justify-between w-full mt-2 text-secondary">
+                                                        <!-- Date section -->
+                                                        <div class="text-md font-medium truncate">
+                                                            Date: 12/1/2012
+                                                        </div>
+                                                        <!-- details courrier -->
+                                                        <div class="ml-2">
+                                                            <button type="button" (click)="result = !result">
+                                                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                    width="24px" height="24px" viewBox="0,0,256,256">
+                                                                    <g fill="#fcc419" fill-rule="nonzero" stroke="none"
+                                                                        stroke-width="1" stroke-linecap="butt"
+                                                                        stroke-linejoin="miter" stroke-miterlimit="10"
+                                                                        stroke-dasharray="" stroke-dashoffset="0"
+                                                                        font-family="none" font-weight="none"
+                                                                        font-size="none" text-anchor="none"
+                                                                        style="mix-blend-mode: normal">
+                                                                        <g transform="scale(10.66667,10.66667)">
+                                                                            <path
+                                                                                d="M12,2c-5.511,0 -10,4.489 -10,10c0,5.511 4.489,10 10,10c5.511,0 10,-4.489 10,-10c0,-5.511 -4.489,-10 -10,-10zM12,4c4.43012,0 8,3.56988 8,8c0,4.43012 -3.56988,8 -8,8c-4.43012,0 -8,-3.56988 -8,-8c0,-4.43012 3.56988,-8 8,-8zM13.45703,8.04297l-1.41406,1.41406l1.54297,1.54297h-6.58594v2h6.58594l-1.54297,1.54297l1.41406,1.41406l3.95703,-3.95703z">
+                                                                            </path>
+                                                                        </g>
+                                                                    </g>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ng-container>
+                                </div>
+                            </ng-template>
+                        </mat-tab>
+                    </mat-tab-group>
+                </div>
+            </mat-drawer-content>
+        </mat-drawer-container>
+    </div>
+</ng-template>

@@ -1,0 +1,139 @@
+<div
+    class="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none bg-black bg-opacity-50">
+    <div class="relative w-full max-w-md mx-auto my-6">
+        <div class="relative flex flex-col w-full bg-white border-0 rounded-lg shadow-lg outline-none focus:outline-none">
+            <!-- Dialog header -->
+            <div class="flex items-center justify-between p-2 bg-gray-0  ">
+                <h3 class="text-2xl font-semibold text-gray-800">
+                    Update
+                </h3>
+                <button type="button" mat-dialog-close color="warn"
+                    class="p-1 ml-3 bg-transparent border-0 text-gray-600 hover:text-red-600 transition-colors duration-200 ease-in-out text-3xl leading-none font-semibold outline-none focus:outline-none">
+                    <span class="flex items-center justify-center h-6 w-6">
+                        <mat-icon svgIcon="heroicons_outline:x-mark"
+                            class="text-gray-600 hover:text-red-600 transition-colors duration-200 ease-in-out">
+                        </mat-icon>
+                    </span>
+                </button>
+            </div>
+
+            <!-- Line separator -->
+            <div class="w-full h-1" style="background: linear-gradient(to right, #ffc107, #007bff);">
+            </div>
+
+            <!-- Dialog content -->
+            <div class="relative p-2 flex-auto">
+                <form class="flex flex-col mt-1 pr-3 pl-3 pb-1 bg-white rounded-2xl  overflow-hidden">
+
+                    <!-- Reference -->
+                    <div class="flex mb-2">
+                        <div class="flex-auto">
+                            <label for="reference" class="block text-sm font-medium text-gray-700">Reference</label>
+                            <input type="text" id="reference"
+                                class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                placeholder="Reference ">
+                        </div>
+                    </div>
+                    <!-- Date réception / Date d'établissement -->
+                    <div class="flex mb-2">
+                        <div class="flex-auto">
+                            <label for="date" class="block text-sm font-medium text-gray-700">Choose a date</label>
+                            <input type="date" id="date"
+                                class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        </div>
+                    </div>
+                    <!-- Type courrier : -->
+                    <div class="flex mat-subtitle-2 mb-2">
+                        <div class="flex-auto">
+                            <label for="courrier-type" class="block text-sm font-medium text-gray-700">Type
+                                courrier</label>
+                            <select id="courrier-type"
+                                class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                <option value="EU">Courrier Depart</option>
+                                <option value="US">Courrier Arrive</option>
+                            </select>
+                        </div>
+                    </div>
+                       <!-- Accusé de réception  -->
+                       <div class="flex mb-2">
+                        <span class="font-semibold mr-1 ">Accusé de réception :</span>
+                        <div class="flex items-center">
+                            <input id="company-news" type="checkbox"
+                                class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
+
+                        </div>
+                    </div>
+
+                    <!-- Destinataires: -->
+                    <div class="flex mb-2">
+                        <div class="flex-auto">
+                            <label for="destinataires" class="block text-sm font-medium text-gray-700">Destinataire(s) *
+                                :</label>
+                            <select id="destinataires"
+                                class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                <option value="EU">Courrier Depart</option>
+                                <option value="US">Courrier Arrive</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Catégorie : -->
+                    <div class="flex mb-2">
+                        <div class="flex-auto">
+                            <label for="categorie" class="block text-sm font-medium text-gray-700">Catégorie :</label>
+                            <select id="categorie"
+                                class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                <option value="EU">Courrier Depart</option>
+                                <option value="US">Courrier Arrive</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Objet * : -->
+                    <div class="flex mb-2">
+                        <div class="flex-auto">
+                            <label for="objet" class="block text-sm font-medium text-gray-700">Objet * :</label>
+                            <div class="mt-1 relative rounded-md shadow-sm">
+
+                                <textarea id="objet" rows="3"
+                                    class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                    placeholder="Objet"></textarea>
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+             <!-- Line separator -->
+             <div class="w-full h-0.5" style="background: linear-gradient(to right, #ffc107, #007bff);">
+            </div>
+            <!-- Dialog footer -->
+            <div class="flex items-center justify-center p-2  border-solid border-gray-300 rounded-b">
+                <!-- Anuler Button with Icon -->
+
+                <button mat-flat-button type="button" mat-dialog-close color="warn"
+                    class="px-6 ml-3 mdc-button mdc-button--unelevated mat-mdc-unelevated-button mat-mdc-button-base"
+                    mat-ripple-loader-class-name="mat-mdc-button-ripple">
+                    <span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span>
+                    <span class="mdc-button__label">Anuler</span>
+                    <span class="mat-mdc-focus-indicator"></span>
+                    <span class="mat-mdc-button-touch-target"></span>
+                    <span class="mat-ripple mat-mdc-button-ripple"></span>
+                    <mat-icon svgIcon="heroicons_outline:x-mark" class="mr-2 text-white"></mat-icon>
+                </button>
+
+
+                <!-- Modifier Button with Icon -->
+
+                <button mat-flat-button=""
+                    class="px-6 ml-3 mdc-button mdc-button--unelevated mat-mdc-unelevated-button mat-primary mat-mdc-button-base"
+                    mat-ripple-loader-class-name="mat-mdc-button-ripple" ng-reflect-color="primary"><span
+                        class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span><span
+                        class="mdc-button__label"> Modifier </span><span class="mat-mdc-focus-indicator"></span><span
+                        class="mat-mdc-button-touch-target"></span><span
+                        class="mat-ripple mat-mdc-button-ripple"></span>
+                    <mat-icon svgIcon="heroicons_solid:check-badge" class="mr-2"></mat-icon>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+.blue-tabs .mat-mdc-tab-header {
+    background-color: var(--primary-color);
+
+  }
+
+  .blue-tabs .mat-mdc-tab-label-container {
+    background-color: var(--primary-color);
+  }
+
+//   .blue-tabs .mdc-tab {
+//     color: white;
+//   }
+
+  .blue-tabs .mdc-tab--active {
+    background-color: var(--jeune-color);
+  }
+
+.mat-mdc-tab .mdc-tab__text-label{
+    color: var(--white-color) !important;
+
+}
+
+  .blue-tabs .mat-mdc-tab-header-pagination-chevron {
+    border-color: var(--white-color);
+  }

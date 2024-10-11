@@ -1,0 +1,85 @@
+{
+    "navbar": {
+        "ajoutercourrier": "Add Mail",
+        "ajouterdocument": "Add Document",
+        "ajouterliaison": "Add Link",
+        "courriercourrier": "Mail to Mail",
+        "documentcourrier": "Document to Mail",
+        "courrierarchives": "Mail Archives",
+        "courrierequipe": "My Team's Mail",
+        "recherchercourrier": "Search Mail",
+        "rechercherdocument": "Search Document",
+        "courrierrecent": "Recent Mail",
+        "courriertraites": "Processed Mail",
+        "fluxcourriers": "Mail Flow",
+        "courrierfavoris": "Favorite Mail",
+        "preferences": "Preferences",
+        "recherchefrequentes": "Frequent Searches",
+        "reports": "Reports",
+        "searchresult": "Search Results"
+    },
+    "common": {
+        "ajouter": "Add",
+        "supprimer": "Delete",
+        "modifier": "Edit",
+        "rechercher": "Search",
+        "annuler": "Cancel",
+        "save": "Save",
+        "emetteur": "Sender",
+        "destinataires": "Recipients",
+        "ajouterfavoris": "Add to Favorites",
+        "close": "Close",
+        "precedent": "Previous",
+        "suivant": "Next",
+        "retirerfavoris": "Remove from Favorites",
+        "aucuncourrier": "No Mail",
+        "retour": "Back",
+        "objet": "Subject",
+        "page": "Page",
+        "total": "Total",
+        "items": "Items",
+        "types": "Types",
+        "date": "Date",
+        "datedebit": "Start Date",
+        "datefin": "End Date",
+        "statut": "Status",
+        "informations": "Information"
+    },
+    "recents": {
+        "courriersrecents": "Recent Mails",
+        "unjour": "1 day ago",
+        "deuxjours": "2 days ago",
+        "troisjours": "3 days ago",
+        "numerotation": "Numbering",
+        "reference": "Reference",
+        "categories": "Categories",
+        "proprietaire": "Owner"
+    },
+    "favoris": {
+        "courrierfavoris": "Favorite Mail"
+    },
+    "equipe": {
+        "courrierequipe": "My Team's Mail",
+        "listeutilisateurs": "List of users"
+    },
+    "fluxcourriers": {
+        "fluxcourriers": "Mail Flow"
+    },
+    "courriersfrequentes": {
+        "courriersfrequentes": "Frequent Mails"
+    },
+    "recharchecourrier": {
+        "recharchecourrier": "Search Mail"
+    },
+    "recharchedocument": {
+        "recharchedocument": "Search Document",
+        "groupesdocuments": "Document Groups",
+        "typeDocument": "Document Type",
+        "référence": "Reference",
+        "typescourrier": "Mail Types",
+        "moinsrecherche": "Less search",
+        "plusrecherche": "More search",
+        "annotation": "Annotation",
+        "motifretour": "Return Reason"
+    }
+}
