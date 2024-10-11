@@ -5,6 +5,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { FuseNavigationService, FuseVerticalNavigationComponent } from 'shared/components/navigation';
 import { AvailableLangs, TranslocoService } from '@ngneat/transloco';
 import { take } from 'rxjs';
+import { NavigationService } from 'app/core/navigation/navigation.service';
 
 @Component({
     selector       : 'languages',
@@ -27,6 +28,7 @@ export class LanguagesComponent implements OnInit, OnDestroy
     constructor(
         private _changeDetectorRef: ChangeDetectorRef,
         private _fuseNavigationService: FuseNavigationService,
+        private _navigationService: NavigationService,
         private _translocoService: TranslocoService,
     )
     {
@@ -45,15 +47,15 @@ export class LanguagesComponent implements OnInit, OnDestroy
         this.availableLangs = this._translocoService.getAvailableLangs();
 
         // Subscribe to language changes
-        this._translocoService.langChanges$.subscribe((activeLang) =>
-        {
+        // this._translocoService.langChanges$.subscribe((activeLang) =>
+        // {
             // Get the active lang
-            this.activeLang = activeLang;
-
+            this.activeLang = localStorage.getItem('lang');
             // Update the navigation
-            this._updateNavigation(activeLang);
-        });
-
+            this._updateNavigation(this.activeLang);
+            this.setActiveLang(this.activeLang);
+        // });
+        
         // Set the country iso codes for languages for flags
         this.flagCodes = {
             'en': 'us',
@@ -82,6 +84,9 @@ export class LanguagesComponent implements OnInit, OnDestroy
     {
         // Set the active lang
         this._translocoService.setActiveLang(lang);
+        localStorage.setItem('lang',lang);
+        this._navigationService.updatePosition(lang == 'ar' ? 'right' : 'left');
+
     }
 
     /**

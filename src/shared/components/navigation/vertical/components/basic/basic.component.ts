@@ -8,13 +8,15 @@ import { FuseNavigationItem } from 'shared/components/navigation/navigation.type
 import { FuseVerticalNavigationComponent } from 'shared/components/navigation/vertical/vertical.component';
 import { FuseUtilsService } from 'shared/services/utils/utils.service';
 import { Subject, takeUntil } from 'rxjs';
+import { NavigationService } from 'app/core/navigation/navigation.service';
+import { TranslocoModule } from '@ngneat/transloco';
 
 @Component({
     selector       : 'fuse-vertical-navigation-basic-item',
     templateUrl    : './basic.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone     : true,
-    imports        : [NgClass, NgIf, RouterLink, RouterLinkActive, MatTooltipModule, NgTemplateOutlet, MatIconModule],
+    imports        : [NgClass, NgIf, TranslocoModule,RouterLink, RouterLinkActive, MatTooltipModule, NgTemplateOutlet, MatIconModule],
 })
 export class FuseVerticalNavigationBasicItemComponent implements OnInit, OnDestroy
 {
@@ -31,6 +33,7 @@ export class FuseVerticalNavigationBasicItemComponent implements OnInit, OnDestr
     constructor(
         private _changeDetectorRef: ChangeDetectorRef,
         private _fuseNavigationService: FuseNavigationService,
+        private _navigationService: NavigationService,
         private _fuseUtilsService: FuseUtilsService,
     )
     {
@@ -72,6 +75,8 @@ export class FuseVerticalNavigationBasicItemComponent implements OnInit, OnDestr
             // Mark for check
             this._changeDetectorRef.markForCheck();
         });
+
+       
     }
 
     /**

@@ -38,8 +38,11 @@ import { SideBarMenuComponent } from './side-bar-menu/side-bar-menu.component';
 export class LayoutComponent implements OnInit, OnDestroy
 {
     isSidebarOpen : boolean = false;
+    isMobile : boolean = false;
+    hovered : boolean = false;
     config: FuseConfig;
     layout: string;
+    position: string = 'left';
     scheme: 'dark' | 'light';
     theme: string;
     private _unsubscribeAll: Subject<any> = new Subject<any>();
@@ -80,6 +83,12 @@ export class LayoutComponent implements OnInit, OnDestroy
      */
     ngOnInit(): void
     {
+        this._navigationService.getPosition().subscribe({
+            next: (pos: string) => {
+              this.position = pos;
+              console.log('New position:', pos);
+            }
+        })
 combineLatest([
     this._fuseConfigService.config$,
     this._fuseMediaWatcherService.onMediaQueryChange$(['(prefers-color-scheme: dark)', '(prefers-color-scheme: light)']),
@@ -196,6 +205,7 @@ combineLatest([
             // Toggle the opened status
             navigation.toggle();
         }
+        this.isMobile  = true;
     }
 
     /**
@@ -212,5 +222,9 @@ combineLatest([
     toggleNavigationAppearance(): void {
         this.isSidebarOpen = !this.isSidebarOpen;  // Toggle the sidebar open/close state
         this.navigationAppearance = this.isSidebarOpen ? 'default' : 'dense';  // Switch appearance
+        this.isMobile = false;
+    }
+    hoveredChanged(hovered: boolean): void{
+        this.hovered = hovered;
     }
 }

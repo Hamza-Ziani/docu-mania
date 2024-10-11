@@ -100,7 +100,7 @@
     <!-- Icon -->
     <ng-container *ngIf="item.icon">
         <mat-icon
-            class="fuse-vertical-navigation-item-icon"
+            class="fuse-vertical-navigation-item-icon mr-0"
             [ngClass]="item.classes?.icon"
             [svgIcon]="item.icon"></mat-icon>
     </ng-container>
@@ -108,14 +108,14 @@
     <!-- Title & Subtitle -->
     <div class="fuse-vertical-navigation-item-title-wrapper">
         <div class="fuse-vertical-navigation-item-title">
-            <span [ngClass]="item.classes?.title">
-                {{item.title}}
+            <span [ngClass]="item.classes?.title" class="px-2">
+                {{item.title | transloco}} 
             </span>
         </div>
         <ng-container *ngIf="item.subtitle">
             <div class="fuse-vertical-navigation-item-subtitle">
                 <span [ngClass]="item.classes?.subtitle">
-                    {{item.subtitle}}
+                    {{item.subtitle | transloco}}
                 </span>
             </div>
         </ng-container>
@@ -127,7 +127,7 @@
             <div
                 class="fuse-vertical-navigation-item-badge-content"
                 [ngClass]="item.badge.classes">
-                {{item.badge.title}}
+                {{item.badge.title | transloco}} 
             </div>
         </div>
     </ng-container>

@@ -8,23 +8,25 @@
     [mode]="isScreenSmall ? 'over' : 'side'" 
     [name]="'mainNavigation'" 
     [navigation]="navigation.default"
+    [position]="position"
     [opened]="!isScreenSmall"
+    (hoveredChanged)="hoveredChanged($event)"
 >
     <!-- Navigation header hook -->
     <ng-container fuseVerticalNavigationContentHeader>
-        <!-- Logo Acaps (shown on larger screens, hidden on smaller screens) -->
-        <div class="items-center justify-center h-30 p-6 lg:flex hidden">
+        <!-- If hovered is true, show this -->
+        <div *ngIf="hovered || isMobile" class="items-center justify-center h-30 p-6 lg:flex ">
             <img class="logo-sidebar" src="assets/logo/acaps.png" alt="ACAPS Logo">
+        </div>
+    
+        <!-- If hovered is false, show this -->
+        <div *ngIf="!hovered && !isMobile" class="logo items-center justify-center  h-30  flex">
+            <img class="w-14" src="assets/logo/logo1.png" alt="Documania Logo">
         </div>
     </ng-container>
     
-    <ng-container fuseVerticalNavigationContentHeader>
-        <!-- Logo Documania (shown on smaller screens, hidden on larger screens) -->
-        <div class="logo items-center justify-center md:h-0 h-30 lg:hidden flex">
-            <img class="w-14" src="assets/logo/logo1.png" alt="Documania Logo">
-        </div>
-        
-    </ng-container>
+    
+   
     
 </fuse-vertical-navigation>
 
